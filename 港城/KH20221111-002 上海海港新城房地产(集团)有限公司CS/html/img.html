@@ -1,0 +1,71 @@
+ <table width="864" height="300" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="1025" align="center" valign="middle">
+        
+        <!--滚动图片开始-->
+						<div class="indpros" id=demo style="OVERFLOW: hidden; width: 1004px; align: center; padding-left:8px;_padding-left:4px; margin:0 auto;">
+                      <div id="tina">
+					    <div align="left">
+					      <table cellspacing="0" cellpadding="0" align="center" border="0">
+                          <tbody>
+                            <tr>
+  
+                            <td id="marquePic1" valign="top">
+							  
+							<table width="1024" border="0" cellpadding="0" cellspacing="0">
+                                <tr> 
+  <td align="center">
+  <dl>
+  <dt class="img"><a href="images/111.jpg" target="_blank"><img src="images/111.jpg" width="384" height="280" hspace="0" vspace="0" border="0" /></a></dt>
+  </dl></td>
+  <td align="center">
+  <dl>
+  <dt class="img"><a href="images/112.jpg" target="_blank"><img src="images/112.jpg" width="384" height="280" border="0" /></a></dt>
+  </dl></td>
+  <td align="center">
+  <dl>
+  <dt class="img"><a href="images/113.jpg" target="_blank"><img src="images/113.jpg" width="384" height="280" border="0" /></a></dt>
+  
+  </dl></td>
+  <td align="center">
+  <dl>
+  <dt class="img"><a href="images/114.jpg" target="_blank"><img src="images/114.jpg" width="384" height="280" border="0" /></a></dt>
+  
+  </dl></td>
+  <td align="center">
+  <dl>
+  <dt class="img"><a href="images/115.jpg" target="_blank"><img src="images/115.jpg" width="384" height="280" border="0" /></a></dt>
+  
+  
+  </dl></td>
+   </tr>
+     </table>
+							  
+							</td>
+                              <td id="marquePic2" valign="top"></td>
+                            </tr>
+                          </tbody>
+                          </table>
+				        </div>
+                      </div>
+                    </div>
+                        <div align="left">
+   <script type=text/javascript> 
+var speed=30 
+marquePic2.innerHTML=marquePic1.innerHTML 
+function Marquee(){ 
+if(demo.scrollLeft>=marquePic1.scrollWidth){ 
+demo.scrollLeft=0 
+}else{ 
+demo.scrollLeft++ 
+}} 
+var MyMar=setInterval(Marquee,speed) 
+demo.onmouseover=function() {clearInterval(MyMar)} 
+demo.onmouseout=function() {MyMar=setInterval(Marquee,speed)} 
+        </script>
+  
+ <!--滚动图片结束-->
+   
+                      </div></td>
+      </tr>
+    </table>

@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>C_Xls</name>
+    </assembly>
+    <members>
+        <member name="M:C_Xls.CXls.#ctor(System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="xlsFile"></param>
+        </member>
+        <member name="M:C_Xls.CXls.DS2Cells(System.Data.DataSet,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ds"></param>
+            <param name="Cell"></param>
+            <param name="dstableIndex">从0开始</param>
+            <param name="sheetIndex">从0开始</param>
+            <param name="startR">跳过的起始行 从0开始</param>
+            <param name="startC">跳过的起始列 从0开始</param>
+            <returns></returns>
+        </member>
+        <member name="M:C_Xls.CXls.#ctor(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            初始化 (普通：HDR=false IMEX=true)
+            </summary>
+            <param name="xlsFile"></param>
+            <param name="HDR"></param>
+            <param name="IMEX">IMEX=true，通知驱动程序始终将“互混”数据列作为文本读取 </param>
+        </member>
+        <member name="M:C_Xls.CXls.OpenXls">
+            <summary>
+            if (!_OpFlag) OpenXls();
+            </summary>
+        </member>
+        <member name="M:C_Xls.CXls.DeleteRow(System.Int32,System.Int32)">
+            <summary>
+            删除指定行
+            </summary>
+            <param name="p_rowIndex">行索引</param>
+            <param name="SheetsIndex">从0开始</param>
+        </member>
+        <member name="M:C_Xls.CXls.ClearRow(System.Int32,System.Int32)">
+            <summary>
+            清除指定行数以外的所有行
+            </summary>
+            <param name="num">从1开始 保留的行数</param>
+            <param name="SheetsIndex">从0开始</param>
+        </member>
+        <member name="M:C_Xls.CXls.ClearRow(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            清除指定范围内的行
+            </summary>
+            <param name="nums">要删除的起始行 从1开始</param>
+            <param name="nume">要删除的尾行 从1开始</param>
+            <param name="SheetsIndex">从0开始</param>
+        </member>
+        <member name="M:C_Xls.CXls.UpdateValueByCells(System.Int32,System.Int32,System.String)">
+            <summary>
+            更新第一个sheet
+            </summary>
+            <param name="Rowindex">行 从1开始</param>
+            <param name="ColumnIdex">列 从1开始</param>
+            <param name="Value"></param>
+        </member>
+        <member name="M:C_Xls.CXls.UpdateValueByCells(System.Int32,System.Int32,System.String,System.Int32)">
+            <summary>
+            更新值，同时设置单元格字体size的增(减)量
+            </summary>
+            <param name="Rowindex"></param>
+            <param name="ColumnIdex"></param>
+            <param name="Value"></param>
+            <param name="SizePer"></param>
+        </member>
+        <member name="M:C_Xls.CXls.UpdateValueByCells(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="Cell1"></param>
+            <param name="Cell2">可以为""或为null</param>
+            <param name="Value"></param>
+            <param name="SheetsIndex"></param>
+        </member>
+        <member name="M:C_Xls.CXls.UpdateValueByCells(System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            更新值，同时设置单元格字体size的增(减)量
+            </summary>
+            <param name="Cell1"></param>
+            <param name="Cell2"></param>
+            <param name="Value"></param>
+            <param name="SheetsIndex"></param>
+            <param name="SizePer">字体size的增(减)量 (整数,可以为负)</param>
+        </member>
+        <member name="M:C_Xls.CXls.UpdateLinkByCells(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            添加超链接(链接到外部)
+            </summary>
+            <param name="Cell1"></param>
+            <param name="Cell2">可以为""或为null</param>
+            <param name="Address">地址或文件(eg: "001/005.tif")</param>
+            <param name="SheetsIndex">Sheets序号 从0开始</param>
+        </member>
+        <member name="M:C_Xls.CXls.UpdateLinkByCells(System.String,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            添加超链接(链接到内部)
+            </summary>
+            <param name="Cell1"></param>
+            <param name="Cell2">可以为""或为null</param>
+            <param name="SheetsIndex">Sheets序号 从0开始</param>
+            <param name="SheetsLinkIndex">目标Sheets的序号 从0开始</param>
+            <param name="Cell3">目标 Cell</param>
+        </member>
+        <member name="M:C_Xls.CXls.UpdateValueByCells(System.String,System.String,System.String,System.Int32,System.String,System.Single,Excel.XlHAlign,Excel.XlVAlign)">
+            <summary>
+            更新值，同时设置单元格字体格式
+            </summary>
+            <param name="Cell1"></param>
+            <param name="Cell2"></param>
+            <param name="Value"></param>
+            <param name="SheetsIndex"></param>
+            <param name="Font"></param>
+        </member>
+        <member name="M:C_Xls.CXls.UpdateValueByCells(System.String,System.String,System.String,System.Int32,System.String,System.Single)">
+            <summary>
+            更新值，同时设置单元格字体格式
+            </summary>
+            <param name="Cell1"></param>
+            <param name="Cell2"></param>
+            <param name="Value"></param>
+            <param name="SheetsIndex"></param>
+            <param name="Font"></param>
+        </member>
+        <member name="M:C_Xls.CXls.GetValueByCell(System.String,System.Int32)">
+            <summary>
+            获取指定单元格内数据
+            </summary>
+            <param name="Cell1"></param>
+            <param name="SheetsIndex">从0开始</param>
+        </member>
+        <member name="M:C_Xls.CXls.MergeCells(System.String,System.String,System.Int32)">
+            <summary>
+            合并单元格
+            </summary>
+            <param name="Cell1"></param>
+            <param name="Cell2"></param>
+            <param name="SheetsIndex"></param>
+        </member>
+        <member name="M:C_Xls.CXls.Dispose">
+            <summary>
+            退出并关闭Excel
+            </summary>
+        </member>
+        <member name="M:C_Xls.CXls.XlsReadDS(System.String[],System.String,System.String)">
+            <summary>
+            
+            Condition eg: WHERE A1=""
+            </summary>
+            <param name="Columns">要返回的字段；为null则返回全部字段</param>
+            <param name="SheetName"></param>
+            <param name="Condition">条件 +where</param>
+            <returns></returns>
+        </member>
+        <member name="T:C_Xls.Properties.Resources">
+            <summary>
+              强类型资源类，用于查找本地化字符串等。
+            </summary>
+        </member>
+        <member name="P:C_Xls.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:C_Xls.Properties.Resources.Culture">
+            <summary>
+              为使用此强类型资源类的所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+    </members>
+</doc>

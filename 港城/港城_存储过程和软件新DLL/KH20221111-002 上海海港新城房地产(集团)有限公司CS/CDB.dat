@@ -1,0 +1,48 @@
+CREATE TABLE [dbo].[城建档案](
+	[案卷顺序号] [nvarchar](50) NULL,
+	[案卷号] [nvarchar](50) NULL,
+	[顺序号] [int] NULL,
+	[责任者] [nvarchar](50) NULL,
+	[文件图纸名称] [nvarchar](255) NULL,
+	[文件图纸编号] [nvarchar](255) NULL,
+	[页数] [nvarchar](50) NULL,
+	[图幅] [nvarchar](50) NULL,
+	[起始页号] [int] NULL,
+	[终止页号] [int] NULL,
+	[光盘号] [nvarchar](50) NULL,
+	[备注] [nvarchar](50) NULL,
+	[项目结构ID] [nchar](10) NULL,
+	[索引表ID] [nchar](10) NULL
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[文书档案](
+	[档号] [nvarchar](50) NULL,
+	[顺序号] [int] NULL,
+	[文号] [nvarchar](50) NULL,
+	[责任者] [nvarchar](50) NULL,
+	[题名] [nvarchar](255) NULL,
+	[日期] [nvarchar](50) NULL,
+	[页号] [nvarchar](50) NULL,
+	[总页数] [int] NULL,
+	[备注] [nvarchar](50) NULL,
+	[项目结构ID] [nchar](10) NULL,
+	[索引表ID] [nchar](10) NULL
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[动拆迁档案](
+	[档号] [nvarchar](50) NULL,
+	[顺序号] [int] NULL,
+	[文号] [nvarchar](50) NULL,
+	[责任者] [nvarchar](50) NULL,
+	[题名] [nvarchar](255) NULL,
+	[日期] [nvarchar](50) NULL,
+	[页号] [nvarchar](50) NULL,
+	[总页数] [int] NULL,
+	[备注] [nvarchar](50) NULL,
+	[被拆迁人姓名] [nvarchar](255) NULL,
+	[被拆迁人身份证号] [nvarchar](50) NULL,
+	[被拆迁人房屋坐落] [nvarchar](255) NULL,
+	[项目结构ID] [nchar](10) NULL,
+	[索引表ID] [nchar](10) NULL
+) ON [PRIMARY]

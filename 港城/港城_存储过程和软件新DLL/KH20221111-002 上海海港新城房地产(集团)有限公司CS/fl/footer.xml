@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Comments:
+	Image dimentions: 280x150.
+	You won't need to create a reflection image, swapping the image will automatically create the reflection.
+-->
+<slideshow time="N/A">
+    <image url="images/1.jpg" link=""/>
+	<image url="images/3.jpg" link=""/>
+<image url="images/2.jpg" link=""/>
+</slideshow>

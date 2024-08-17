@@ -1,0 +1,23 @@
+package hw.randmon;
+import java.util.*;
+
+public class Randmon {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO 自动生成方法存根
+      
+		Random r=new Random();
+		int[] num=new int[3];
+		//11到20的随机数
+		for(int i=11;i<=20;i++)
+		{
+			num[i]=r.nextInt();
+			
+		}
+		
+	}
+
+}

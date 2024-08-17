@@ -1,0 +1,2792 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ZM_DAGL</name>
+    </assembly>
+    <members>
+        <member name="T:ZM_DAGL.C_Dothing">
+             <summary>
+            事件完成类
+             </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Dothings">
+            <summary>
+            索引目录集合类
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_Dothings.Add(ZM_DAGL.C_Dothing,System.String)">
+            <summary>
+            添加 item
+            </summary>
+            <param name="obj"></param>
+            <param name="strKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Dothings.Remove(System.Int32)">
+            <summary>
+            根据 index 移除 item
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ZM_DAGL.C_Dothings.Item(System.Int32)">
+            <summary>
+            根据 index 获得 item
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Dothings.Count">
+            <summary>
+            总数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Dothings.Dispose">
+            <summary>
+            释放;
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Log">
+            <summary>
+            系统日志
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Logs">
+            <summary>
+            系统日志集合类
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_Logs.Add(ZM_DAGL.C_Log,System.String)">
+            <summary>
+            添加 item
+            </summary>
+            <param name="obj"></param>
+            <param name="strKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Logs.Remove(System.Int32)">
+            <summary>
+            根据 index 移除 item
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ZM_DAGL.C_Logs.Item(System.Int32)">
+            <summary>
+            根据 index 获得 item
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Logs.Count">
+            <summary>
+            总数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Logs.Dispose">
+            <summary>
+            释放;
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_AchType">
+            <summary>
+            档案类型
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_AchType.上级类型ID">
+            <summary>
+            -1 根级
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_AchTypes">
+            <summary>
+            档案类型集合类
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_AchTypes.Add(ZM_DAGL.C_AchType,System.String)">
+            <summary>
+            添加 item
+            </summary>
+            <param name="obj"></param>
+            <param name="strKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_AchTypes.Remove(System.Int32)">
+            <summary>
+            根据 index 移除 item
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ZM_DAGL.C_AchTypes.Item(System.Int32)">
+            <summary>
+            根据 index 获得 item
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_AchTypes.Count">
+            <summary>
+            总数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_AchTypes.Dispose">
+            <summary>
+            释放;
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Right">
+            <summary>
+            权限控制  
+            
+            
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Right.拥有权限">
+            <summary>
+            权限类型 = C_Config.权限类型.目录管理权限时 此值为空
+            
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Rights">
+            <summary>
+            权限控制集合类
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_Rights.Add(ZM_DAGL.C_Right,System.String)">
+            <summary>
+            添加 item
+            </summary>
+            <param name="obj"></param>
+            <param name="strKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Rights.Remove(System.Int32)">
+            <summary>
+            根据 index 移除 item
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ZM_DAGL.C_Rights.Item(System.Int32)">
+            <summary>
+            根据 index 获得 item
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Rights.Count">
+            <summary>
+            总数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Rights.Dispose">
+            <summary>
+            释放;
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_IndexTableRecord">
+            <summary>
+            索引表过程记录
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_IndexTableRecords">
+            <summary>
+            索引表过程记录集合类
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_IndexTableRecords.Add(ZM_DAGL.C_IndexTableRecord,System.String)">
+            <summary>
+            添加 item
+            </summary>
+            <param name="obj"></param>
+            <param name="strKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_IndexTableRecords.Remove(System.Int32)">
+            <summary>
+            根据 index 移除 item
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ZM_DAGL.C_IndexTableRecords.Item(System.Int32)">
+            <summary>
+            根据 index 获得 item
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_IndexTableRecords.Count">
+            <summary>
+            总数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_IndexTableRecords.Dispose">
+            <summary>
+            释放;
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Department">
+            <summary>
+            部门/组
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Departments">
+            <summary>
+            部门/组集合类
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_Departments.Add(ZM_DAGL.C_Department,System.String)">
+            <summary>
+            添加 item
+            </summary>
+            <param name="obj"></param>
+            <param name="strKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Departments.Remove(System.Int32)">
+            <summary>
+            根据 index 移除 item
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ZM_DAGL.C_Departments.Item(System.Int32)">
+            <summary>
+            根据 index 获得 item
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Departments.Count">
+            <summary>
+            总数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Departments.Dispose">
+            <summary>
+            释放;
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_User">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Users">
+            <summary>
+            集合类
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_Users.Add(ZM_DAGL.C_User,System.String)">
+            <summary>
+            添加 item
+            </summary>
+            <param name="obj"></param>
+            <param name="strKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Users.Remove(System.Int32)">
+            <summary>
+            根据 index 移除 item
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ZM_DAGL.C_Users.Item(System.Int32)">
+            <summary>
+            根据 index 获得 item
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Users.Count">
+            <summary>
+            总数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Users.Dispose">
+            <summary>
+            释放;
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Project">
+            <summary>
+            项目类 
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Project.基本信息字段">
+            <summary>
+            未添加判断字段是否可以重复
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Project.创建人ID">
+            <summary>
+            系统自动赋值 只读
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Project.创建时间">
+            <summary>
+            系统自动赋值 只读
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Projects">
+            <summary>
+            项目集合类
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_Projects.Add(ZM_DAGL.C_Project,System.String)">
+            <summary>
+            添加 item
+            </summary>
+            <param name="obj"></param>
+            <param name="strKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Projects.Remove(System.Int32)">
+            <summary>
+            根据 index 移除 item
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ZM_DAGL.C_Projects.Item(System.Int32)">
+            <summary>
+            根据 index 获得 item
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Projects.Count">
+            <summary>
+            总数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Projects.Dispose">
+            <summary>
+            释放;
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_ProjectStructure">
+            <summary>
+            项目结构
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_ProjectStructure.上级结构ID">
+            <summary>
+            -1 根级
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_ProjectStructure.样例ID">
+            <summary>
+            -1 未设置样例
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_ProjectStructures">
+            <summary>
+            项目结构集合类
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_ProjectStructures.Add(ZM_DAGL.C_ProjectStructure,System.String)">
+            <summary>
+            添加 item
+            </summary>
+            <param name="obj"></param>
+            <param name="strKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_ProjectStructures.Remove(System.Int32)">
+            <summary>
+            根据 index 移除 item
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ZM_DAGL.C_ProjectStructures.Item(System.Int32)">
+            <summary>
+            根据 index 获得 item
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_ProjectStructures.Count">
+            <summary>
+            总数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_ProjectStructures.Dispose">
+            <summary>
+            释放;
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Model">
+            <summary>
+            模板类
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Model.默认基本信息字段">
+            <summary>
+            字段中不能使用特殊字符""
+            未添加判断字段是否可以重复
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Models">
+            <summary>
+            模板集合类
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_Models.Add(ZM_DAGL.C_Model,System.String)">
+            <summary>
+            添加 item
+            </summary>
+            <param name="obj"></param>
+            <param name="strKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Models.Remove(System.Int32)">
+            <summary>
+            根据 index 移除 item
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ZM_DAGL.C_Models.Item(System.Int32)">
+            <summary>
+            根据 index 获得 item
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Models.Count">
+            <summary>
+            总数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Models.Dispose">
+            <summary>
+            释放;
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Sample">
+            <summary>
+            样例类
+            附件列表length>0时 为末级节点,节点下不能再添加子样例
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Sample.上级样例ID">
+            <summary>
+            -1 根级
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Sample.模板ID">
+            <summary>
+            -1 为用户自定义样例
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Sample.表格附件ID">
+            <summary>
+            小于等于0  没有表格
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Samples">
+            <summary>
+            样例集合类
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_Samples.Add(ZM_DAGL.C_Sample,System.String)">
+            <summary>
+            添加 item
+            </summary>
+            <param name="obj"></param>
+            <param name="strKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Samples.Remove(System.Int32)">
+            <summary>
+            根据 index 移除 item
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ZM_DAGL.C_Samples.Item(System.Int32)">
+            <summary>
+            根据 index 获得 item
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Samples.Count">
+            <summary>
+            总数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Samples.Dispose">
+            <summary>
+            释放;
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_File">
+            <summary>
+            附件类
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_File.头附件ID">
+            <summary>
+            起始为1时 头附件ID=-1
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_File.上传用户名">
+            <summary>
+            用户姓名
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_File.文件类型">
+            <summary>
+            文件名+文件后缀
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_File.文件块序号">
+            <summary>
+            起始 1 
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Files">
+            <summary>
+            附件集合类
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_Files.Add(ZM_DAGL.C_File,System.String)">
+            <summary>
+            添加 item
+            </summary>
+            <param name="obj"></param>
+            <param name="strKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Files.Remove(System.Int32)">
+            <summary>
+            根据 index 移除 item
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ZM_DAGL.C_Files.Item(System.Int32)">
+            <summary>
+            根据 index 获得 item
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Files.Count">
+            <summary>
+            总数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Files.Dispose">
+            <summary>
+            释放;
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_IndexTable">
+            <summary>
+            索引目录
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_IndexTable.文件ID">
+            <summary> 
+            附件表中的附件ID （类型为 C_Config.附件类型.文件）
+            没有对应文件 置为-1
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_IndexTable.附件ID列表">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_IndexTable.顺序号">
+            <summary>
+            从 0开始
+            系统自动生成 数据从1 开始
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_IndexTable.自定义表格">
+            <summary>
+            顺序号为0 时，为表格字段
+            顺序号>0时,为表格具体数据
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_IndexTable.字段顺序">
+            <summary>
+            自定义表格内容和字段的顺序关系 从0开始
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_IndexTable.状态">
+            <summary>
+            顺序号为0的记录无效
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_IndexTable.关健字">
+            <summary>
+            为0的设置为不公开，为1的设置为公开
+            </summary>
+            
+        </member>
+        <member name="T:ZM_DAGL.C_IndexTables">
+            <summary>
+            索引目录集合类
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_IndexTables.Add(ZM_DAGL.C_IndexTable,System.String)">
+            <summary>
+            添加 item
+            </summary>
+            <param name="obj"></param>
+            <param name="strKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_IndexTables.Remove(System.Int32)">
+            <summary>
+            根据 index 移除 item
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ZM_DAGL.C_IndexTables.Item(System.Int32)">
+            <summary>
+            根据 index 获得 item
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_IndexTables.Count">
+            <summary>
+            总数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_IndexTables.Dispose">
+            <summary>
+            释放;
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_IndexTableModel">
+            <summary>
+            索引目录模板
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_IndexTableModel.顺序号">
+            <summary>
+            从 0开始
+            系统自动生成 数据从1 开始
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_IndexTableModel.自定义表格">
+            <summary>
+            顺序号为0 时，为表格字段
+            顺序号>0时,为表格具体数据
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_IndexTableModel.字段顺序">
+            <summary>
+            自定义表格内容和字段的顺序关系 从0开始
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_IndexTableModels">
+            <summary>
+            索引目录模板集合类
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_IndexTableModels.Add(ZM_DAGL.C_IndexTableModel,System.String)">
+            <summary>
+            添加 item
+            </summary>
+            <param name="obj"></param>
+            <param name="strKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_IndexTableModels.Remove(System.Int32)">
+            <summary>
+            根据 index 移除 item
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ZM_DAGL.C_IndexTableModels.Item(System.Int32)">
+            <summary>
+            根据 index 获得 item
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_IndexTableModels.Count">
+            <summary>
+            总数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_IndexTableModels.Dispose">
+            <summary>
+            释放;
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_UserGroup">
+            <summary>
+            用户组ID
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_UserGroup.用户ID列表">
+            <summary>
+            如果是null 或者长度为0则为没有用户
+            如果[0] 值为 -1时为全部用户
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_UserGroups">
+            <summary>
+            集合类
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_UserGroups.Add(ZM_DAGL.C_UserGroup,System.String)">
+            <summary>
+            添加 item
+            </summary>
+            <param name="obj"></param>
+            <param name="strKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_UserGroups.Remove(System.Int32)">
+            <summary>
+            根据 index 移除 item
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ZM_DAGL.C_UserGroups.Item(System.Int32)">
+            <summary>
+            根据 index 获得 item
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_UserGroups.Count">
+            <summary>
+            总数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_UserGroups.Dispose">
+            <summary>
+            释放;
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Config">
+            <summary>
+            程序配置处理
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.Miss_Value">
+            <summary>
+            Miss_Value string
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.DEF_Server">
+            <summary>
+            默认 SQL服务器名
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.DEF_Database">
+            <summary>
+            默认 数据库名
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.DEF_Uid">
+            <summary>
+            默认 SQL登录帐户
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.DEF_Pwd">
+            <summary>
+            默认 SQL登录密码
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.DEF_CommandTimeOut">
+            <summary>
+            默认 响应时间
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.RIGHT_NoRight">
+            <summary>
+            默认权限
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.RIGHT_账户管理">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.RIGHT_档案类型管理">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.RIGHT_模板管理">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.RIGHT_知识库管理">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.RIGHT_项目管理">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.RIGHT_数据检索">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.RIGHT_系统日志管理">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.RIGHT_项目数据录入">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.CcustomerRIGHT_查询浏览">
+            <summary>
+            查询利用权限
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.CcustomerRIGHT_文件查看">
+            <summary>
+            查询利用权限
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.CcustomerRIGHT_文件利用">
+            <summary>
+            查询利用权限
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.CcustomerRIGHT_附件浏览">
+            <summary>
+            查询利用权限
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Config.索引表状态">
+            <summary>
+            备用
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.附件类型.文件">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.附件类型.附件">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.日志类型.日志查询">
+            <summary>
+            用于日志查询 不限
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.权限类型.目录管理权限">
+            <summary>
+            调整目录结构,设置模板、样例,索引表建立,录入上传权限配置
+            权限值为空即可
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.权限类型.录入上传权限">
+            <summary>
+            值:C_Config.录入上传权限
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.权限类型.目录浏览利用权限">
+            <summary>
+            项目负责人才能设置的权限
+            值:C_Config.目录浏览利用权限
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.权限类型.文件浏览利用权限">
+            <summary>
+            项目负责人才能设置的权限
+            值:C_Config.文件浏览利用权限
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.录入上传权限.录入及文件创建">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.录入上传权限.附件上传">
+            <summary>
+            上传时 可以在文件中选择关联的单元格，但是上传后无法做任何修改
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.录入上传权限.附件修改">
+            <summary>
+            删除上传的附件，可以下载修改重新上传，可以修改与单元格的管理
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Config.目录浏览利用权限">
+            <summary>
+            如果目录浏览利用权限为空 则只能看到目录结构
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.目录浏览利用权限.表格查看权限">
+            <summary>
+            查看当前目录的表格
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.目录浏览利用权限.表格查看利用">
+            <summary>
+            可以导出或打印当前目录的表格
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Config.文件浏览利用权限">
+            <summary>
+            针对索引目录中的单条数据
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.文件浏览利用权限.附件下载">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Config.索引表操作状态">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Config.索引表操作权限">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.appUser">
+            <summary>
+            当前用户(lg_name);
+            只读,登录后系统自动设置
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.appUserID">
+            <summary>
+            当前用户ID 
+            只读,登录后系统自动设置
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.appRight">
+            <summary>
+            当前权限 string
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.appServer">
+            <summary>
+            当前SQL服务器连接配置
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.appDatabase">
+            <summary>
+            当前SQL服务器连接配置
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.appUid">
+            <summary>
+            当前SQL服务器连接配置
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.appPwd">
+            <summary>
+            当前SQL服务器连接配置
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.appCommandTimeOut">
+            <summary>
+            当前SQL服务器响应时间配置
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Config.自动字段">
+            <summary>
+            表格中单元格对应基本信息表中的字段
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.自动字段.行">
+            <summary>
+            单元格行位置
+            起始行0
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.自动字段.列">
+            <summary>
+            单元格列位置
+            (新)用字母标示“A”，“BE”
+            (旧)起始列0
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.自动字段.sheet">
+            <summary>
+            sheet
+            起始0
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_Config.表内关联">
+            <summary>
+            表中与单元格关联的附件
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.表内关联.行">
+            <summary>
+            单元格行位置
+            起始行0
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.表内关联.列">
+            <summary>
+            单元格列位置
+            (新)用字母标示“A”，“BE”
+            (旧)起始列0
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Config.表内关联.sheet">
+            <summary>
+            sheet
+            起始0
+            </summary>
+        </member>
+        <member name="T:ZM_DAGL.C_G">
+            <summary>
+            类内全局
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_G.objFrmInterFace">
+            <summary>
+            界面数据接口
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_G.showImRunning">
+            <summary>
+            是否显示当前正在运行界面
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_G.showImRunning_value">
+            <summary>
+            显示运行界面的滚动条值 1 - 100
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_G.threadingPre">
+            <summary>
+            线程的参数
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_G.threadingRe">
+            <summary>
+            线程的返回值
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_G.threadingReObj">
+            <summary>
+            线程返回值
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_G.uploadFileInfo">
+            <summary>
+            上传文件的文件说明
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_G.RemoveBlanks(System.String)">
+            <summary>
+            去除多余空格
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ZM_DAGL.C_Main">
+            <summary>
+            数据访问层
+            </summary>
+        </member>
+        <member name="F:ZM_DAGL.C_Main.appCon">
+            <summary>
+            帐户连接
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.TestSqlConnection(System.String,System.String,System.String,System.String)">
+            <summary>
+            测试连接
+            返回true 连接成功
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetConnection">
+            
+             getConnection
+            
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetConnection2(System.String)">
+            
+             getConnection
+            
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetCommand(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String)">
+            
+             getCommand
+            
+        </member>
+        <member name="M:ZM_DAGL.C_Main.SearchData(System.String,System.String,System.String[])">
+            <summary>
+            索引目录查询
+            </summary>
+            <param name="项目名称"></param>
+            <param name="结构名称"></param>
+            <param name="keyWords"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.getAllFields(System.String)">
+            <summary>
+            获取指定表的所有字段
+            </summary>
+            <param name="项目名称"></param>
+            <param name="结构名称"></param>
+            <param name="keyWords"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.SearchData2(System.Int32,System.Collections.ArrayList,System.String[])">
+            <summary>
+            索引目录查询
+            </summary>
+            <param name="项目名称"></param>
+            <param name="结构名称"></param>
+            <param name="keyWords"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ZM_DAGL.C_Main.Upload_Request(System.String,System.String,System.String)" -->
+        <member name="M:ZM_DAGL.C_Main.SearchData_TXT(System.String,System.String,System.String[])">
+            <summary>
+            表格文件检索
+            </summary>
+            <param name="项目名称"></param>
+            <param name="结构名称"></param>
+            <param name="keyWords"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.SearchData_TXT2(System.Int32,System.Collections.ArrayList,System.String[])">
+            <summary>
+            表格文件检索2--项目结构 检索
+            </summary>
+            <param name="项目名称"></param>
+            <param name="结构名称"></param>
+            <param name="keyWords"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.SearchData_Key(System.String,System.String,System.String[])">
+            <summary>
+            关健字检索
+            </summary>
+            <param name="项目名称"></param>
+            <param name="结构名称"></param>
+            <param name="keyWords"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.SearchData_Key2(System.Int32,System.Collections.ArrayList,System.String[])">
+            <summary>
+            关健字检索
+            </summary>
+            <param name="项目名称"></param>
+            <param name="结构名称"></param>
+            <param name="keyWords"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.SearchData_Attach(System.String,System.String,System.String[])">
+            <summary>
+            附件名检索
+            </summary>
+            <param name="项目名称"></param>
+            <param name="结构名称"></param>
+            <param name="keyWords"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.SearchData_Attach2(System.Int32,System.Collections.ArrayList,System.String[])">
+            <summary>
+            附件名检索
+            </summary>
+            <param name="项目名称"></param>
+            <param name="结构名称"></param>
+            <param name="keyWords"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetSpecialRight(System.Int32,System.Int32)">
+            <summary>
+            返回 "" 没有设置权限
+            </summary>
+            <param name="用户组ID"></param>
+            <param name="索引表ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetDefaultRight(System.Int32,System.Int32)">
+            <summary>
+            返回 null 为用户组没有添加此项目结构的权限;"" 为用户组添加了此项目结构 但权限为空
+            </summary>
+            <param name="用户组ID"></param>
+            <param name="项目结构ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectStructureIDBy(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="用户组ID"></param>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectIDByStructID(System.Int32)">
+            <summary>
+            根据项目结构ID获取项目ID
+            返回项目ID
+            </summary>
+            <param name="用户组ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectIDBy用户组ID(System.Int32)">
+            <summary>
+            获取用户组有权限的项目列表
+            返回项目ID
+            </summary>
+            <param name="用户组ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetUserGroupsBy(System.Int32,System.Int32)">
+            <summary>
+            按用户ID 和项目结构获取用户组ID 
+            </summary>
+            <param name="用户ID"></param>
+            <param name="项目结构ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetUserGroupByID(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="用户组ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetAllUserGroup">
+            <summary>
+            获取所有的用户组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectStructureListByProjectID(System.Int32)">
+            <summary>
+            按项目ID获取所有的结构
+            返回ID列表 int[]
+            </summary>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectStructureListByUserOpRight(System.Int32,System.Int32)">
+            <summary>
+            按用户操作权限获取所有的结构
+            返回ID列表 int[]
+            </summary>
+            <param name="用户ID"></param>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetCellIDListBy(System.Int32)">
+             <summary>
+             按项目ID获取所有的表格文件ID列表
+             返回ID列表 int[]
+             </summary>
+            
+             <param name="项目ID"></param>
+             <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetAllUserIDByOpRight(System.Int32,ZM_DAGL.C_Config.索引表操作权限)">
+            <summary>
+            按项目结构权限获取所有有权限的用户
+            返回int[]
+            </summary>
+            <param name="项目结构ID"></param>
+            <param name="权限"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetIndexTableDataCount(System.Int32)">
+            <summary>
+            获取索引目录条数(不包括顺序号为0的字段数据)
+            </summary>
+            <param name="项目结构ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetAllIndexTableRecord(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="索引表ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetLastIndexTableRecord(System.Int32)">
+            <summary>
+            获得最近一条操作记录
+            </summary>
+            <param name="索引表ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectStructureIDs(System.Int32)">
+            <summary>
+            获取某项目结构下的所有子项目结构
+            </summary>
+            <param name="项目结构ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetFileIDListBy项目结构ID(System.Int32)">
+            <summary>
+            获取项目结构下的文件列表
+            </summary>
+            <param name="项目结构ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.CheckIndexTableFileName(System.Int32,System.String)">
+            <summary>
+            判断目录下文件是否已存在
+            返回：0 文件名可用
+            </summary>
+            <param name="项目结构ID"></param>
+            <param name="文件名"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetITProjectStructureListBy项目ID(System.Int32)">
+            <summary>
+            按项目ID获取所有有索引表的项目结构ID
+            返回ID列表 int[]
+            </summary>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetIndexTableListBy项目ID(System.Int32)">
+            <summary>
+            按项目ID获取所有的索引表ID，顺序号为零的
+            返回ID列表 int[]
+            </summary>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetALLIndexTableListBy项目ID(System.Int32)">
+            <summary>
+            按项目ID获取所有的索引表ID，包括顺序号不为零的
+            返回ID列表 int[]
+            </summary>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetALLIndexTableListBy项目结构IDs(System.Collections.ArrayList)">
+            <summary>
+            按项目结构ID获取索引表ID，包括顺序号不为零的
+            返回ID列表 int[]
+            </summary>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetIndexTableDataTop5(System.Int32)">
+            <summary>
+            获取前5条的索引记录 不包括字段记录
+            </summary>
+            <param name="项目结构ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetIndexTableData(System.Int32)">
+            <summary>
+            获取索引记录 不包括字段记录
+            </summary>
+            <param name="项目结构ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetIndexTableData2(System.Int32)">
+            <summary>
+            获取文件ID不为-1的第一个索引记录 不包括字段记录
+            </summary>
+            <param name="项目结构ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetIndexTableDataBy顺序号(System.Int32,System.Int32)">
+            <summary>
+            获取索引表数据
+            </summary>
+            <param name="项目结构ID"></param>
+            <param name="顺序号">大于0</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetIndexTableDataBy文件ID(System.Int32)">
+            <summary>
+            获取索引表数据
+            </summary>
+            <param name="文件ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetIndexTableDataBy索引表ID(System.Int32)">
+            <summary>
+            获取索引表数据
+            </summary>
+            <param name="索引表ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetZeroIndexTableDataBy索引表ID(System.Int32)">
+            <summary>
+            获取索引表数据,顺序号为0的,为了获得字段名称
+            </summary>
+            <param name="索引表ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetIndexTableColumns(System.Int32)">
+            <summary>
+            获取索引表字段
+            </summary>
+            <param name="项目结构ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetIndexTableModelData(System.Int32)">
+            <summary>
+            获取索引表模板数据
+            </summary>
+            <param name="样例ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetIndexTableModelDataBy(System.Int32)">
+            <summary>
+            获取索引表模板数据
+            </summary>
+            <param name="样例ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetIndexTableModelColumns(System.Int32)">
+            <summary>
+            获取索引表模板字段
+            </summary>
+            <param name="样例ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetIndexTablesBy(System.Int32,System.Int32)">
+            <summary>
+            通常一个顺序号返回的应该最多一条记录
+            </summary>
+            <param name="项目结构ID"></param>
+            <param name="顺序号">-1 不限顺序号</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetSamplesCountBy模板ID(System.Int32)">
+            <summary>
+            获取指定模板下样例数(结构)
+            </summary>
+            <param name="模板ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetSamplesIDsBy模板ID(System.Int32)">
+            <summary>
+            获取指定模板ID下的所有样例ID
+            </summary>
+            <param name="模板ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetSamplesIDsByProjectStructList(System.Collections.ArrayList)">
+            <summary>
+            获取指定项目结构列表下的所有样例ID
+            </summary>
+            <param name="模板ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectStructuresCountBy项目ID_已建文件(System.Int32)">
+            <summary>
+            按项目ID获取建有已建文件的文件数
+            </summary>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectStructuresCountBy项目ID_已建索引(System.Int32)">
+            <summary>
+            按项目ID获取建有已建索引的结构目录条数
+            </summary>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectStructuresCountBy项目ID_已录索引(System.Int32)">
+            <summary>
+            按项目ID获取已录索引的结构目录条数
+            </summary>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectStructuresCountBy项目ID_末级未建(System.Int32)">
+            <summary>
+            按项目ID获取末级未建索引的结构目录条数
+            </summary>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectStructuresCountBy项目ID(System.Int32)">
+            <summary>
+            按项目ID获取结构目录条数
+            </summary>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectStructuresBy(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="项目ID"></param>
+            <param name="上级结构ID">获取所有根级 用-1</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectStructureBy项目结构ID(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="项目结构ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectsBy创建人ID(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="创建人ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectsBy用户ID(System.Int32)">
+            <summary>
+            有负责权限以及录入权限的人员
+            </summary>
+            <param name="用户ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectsBy项目名称(System.String)">
+            <summary>
+            搜索项目名称
+            </summary>
+            <param name="用户ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectsCountBy档案类型ID(System.Int32)">
+            <summary>
+            获取项目数
+            </summary>
+            <param name="档案类型ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectStructCountBy样例ID(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            根据样例ID集合获取项目结构数
+            </summary>
+            <param name="样例ID集合"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectsCountBy(System.Int32,System.String)">
+            <summary>
+            检查同类型下 项目名称是否已存在
+            </summary>
+            <param name="档案类型ID"></param>
+            <param name="项目名称"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetModelIDby项目ID(System.Int32)">
+            <summary>
+            获取某个项目使用的模板ID
+            </summary>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetIndexTableModelIDListby模板ID(System.Int32)">
+            <summary>
+            获取所有的索引表模板ID列表
+            </summary>
+            <param name="模板ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectsBy档案类型ID(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="档案类型ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectBy项目ID(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetFileStreamBy附件ID(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="附件ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetFilesIDBy附件ID(System.Int32)">
+            <summary>
+            获取同一文件的文件块ID
+            </summary>
+            <param name="附件ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetFileWithFileStreamBy附件ID(System.Int32)">
+            <summary>
+            获取单个附件数据流
+            </summary>
+            <param name="附件ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetFileWithoutFileStreamBy附件ID(System.Int32)">
+            <summary>
+            按附件ID获取单个附件的信息 ，不包含文件数据
+            </summary>
+            <param name="附件ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetTxtWithoutFileStreamBy附件ID(System.Int32)">
+            <summary>
+            按附件ID获取单个附件的文本信息 ，不包含文件数据
+            </summary>
+            <param name="附件ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetFileTxtBy附件ID(System.Int32)">
+            <summary>
+            获取单个附件的大文本数据
+            </summary>
+            <param name="附件ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetRootSamplesBy模板ID(System.Int32)">
+            <summary>
+            按模板ID获取所有根级样例
+            </summary>
+            <param name="模板ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetSamplesBy上级样例ID(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="上级样例ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetSampleByID(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="样例ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetModelByID(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="模板ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetModelsBy档案类型ID(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="档案类型ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetUsersBy部门ID(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="部门ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetUserBy用户登录名(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="用户登录名"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetUserByID(System.Int32)">
+            <summary>
+            按用户ID获取用户
+            </summary>
+            <param name="用户ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetDepartmentByID(System.Int32)">
+            <summary>
+            按部门ID 获取部门信息
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetAllDepartments">
+            <summary>
+            获取所有部门
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetAchTypeByID(System.Int32)">
+            <summary>
+            按档案类型ID获取档案类型
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetAchsTypesBy上级ID(System.Int32)">
+            <summary>
+            按上级档案类型ID获取档案类型 
+            </summary>
+            <param name="ID">-1 为根级</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertUserGroup_DefaultRight(System.Int32,System.Int32)">
+            <summary>
+            设置用户组的默认权限
+            返回 -1 已经添加了此项目结构
+            </summary>
+            <param name="用户组ID"></param>
+            <param name="项目结构ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertUserGroup(System.String)">
+            <summary>
+            新建用户组，用户组名称不能为空
+            返回: 用户组ID 成功；0 失败；-1 名称已存在
+            </summary>
+            <param name="用户组名称"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertIndexTableRecord(System.Int32,System.String,ZM_DAGL.C_Config.索引表操作状态)">
+            <summary>
+            新增索引表操作记录
+            返回值大于等于1 成功
+            </summary>
+            <param name="索引表ID"></param>
+            <param name="内容"></param>
+            <param name="操作状态"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertIndexTableDataModelAt(System.Int32,System.String[],System.Int32)">
+            <summary>
+            插入数据到索引模板表
+            返回：成功 1；失败 0；索引表还未创建 -1；错误的顺序号值 -2
+            </summary>
+            <param name="样例ID"></param>
+            <param name="自定义数据"></param>
+            <param name="顺序号">起始1</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertIndexTableDataModel(System.Int32,System.String[])">
+            <summary>
+            追加数据到索引表模板
+            返回：成功 1；失败 0；索引表还未创建 -1 
+            </summary>
+            <param name="样例ID"></param>
+            <param name="自定义数据"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.CreateIndexTableModel(System.Int32,System.String[])">
+            <summary>
+            创建索引表模板
+            成功返回 索引表模板ID；失败 0；-1 表模板已存在
+            </summary>
+            <param name="样例ID"></param>
+            <param name="自定义字段"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertIndexTableDataAt(System.Int32,System.String[],System.Int32)">
+            <summary>
+            插入数据到索引表
+            返回：成功 索引表ID；失败 0；索引表还未创建 -1；错误的顺序号值 -2
+            </summary>
+            <param name="项目结构ID"></param>
+            <param name="自定义数据"></param>
+            <param name="顺序号"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertIndexTableData(System.Int32,System.String[])">
+            <summary>
+            追加数据到索引表
+            返回：成功 索引表ID；失败 0；索引表还未创建 -1 
+            </summary>
+            <param name="项目结构ID"></param>
+            <param name="自定义数据"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertIndexTableData(ZM_DAGL.C_IndexTable)">
+            <summary>
+            追加索引表数据
+            项目结构ID必须赋值；
+            顺序号 系统会自动生成；
+            字段顺序 不需要赋值；
+            返回：成功 索引表ID；失败 0；
+            </summary>
+            <param name="cit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertIndexTableData2(ZM_DAGL.C_IndexTable)">
+            <summary>
+            追加索引表数据
+            项目结构ID必须赋值；
+            顺序号 系统会自动生成；
+            字段顺序 不需要赋值；
+            返回：成功 索引表ID；失败 0；
+            </summary>
+            <param name="cit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertOutIndexTableData(ZM_DAGL.C_IndexTable,ZM_DAGL.C_IndexTable,System.String)">
+            <summary>
+            在单一索引表中追加索引表数据
+            项目结构ID必须赋值；
+            顺序号 系统会自动生成；
+            字段顺序 不需要赋值；
+            返回：成功 索引表ID；失败 0；
+            </summary>
+            <param name="cit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertOutIndexTableData2(ZM_DAGL.C_IndexTable,ZM_DAGL.C_IndexTable,System.String,System.String)">
+            <summary>
+            在单一索引表中追加索引表数据
+            项目结构ID必须赋值；
+            顺序号 系统会自动生成；
+            字段顺序 不需要赋值；
+            返回：成功 索引表ID；失败 0；
+            </summary>
+            <param name="cit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertOutIndexTableData3(ZM_DAGL.C_IndexTable,ZM_DAGL.C_IndexTable,System.String)">
+            <summary>
+            在单一索引表中追加索引表数据
+            项目结构ID必须赋值；
+            顺序号 系统会自动生成；
+            字段顺序 不需要赋值；
+            返回：成功 索引表ID；失败 0；
+            </summary>
+            <param name="cit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.CreateIndexTable(System.Int32,System.String[],System.String[])">
+            <summary>
+            成功返回1；-1 索引表已存在
+            </summary>
+            <param name="项目结构ID"></param>
+            <param name="自定义字段"></param>
+            <param name="字段公开"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.CreateSimpleIndexTable(System.String[],System.String)">
+            <summary>
+            成功返回0；1 索引表出错
+            </summary>
+            <param name="项目结构ID"></param>
+            <param name="自定义字段"></param>
+            <param name="字段公开"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertProjectStructure(ZM_DAGL.C_ProjectStructure)">
+            <summary>
+            成功返回项目结构ID，-1 同级结构结构名称已存在，0其他错误，-2 上级ID已建立索引目录
+            </summary>
+            <param name="cob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertProject(ZM_DAGL.C_Project)">
+            <summary>
+            新建项目
+            成功返回项目ID，-1 同档案类型下项目名称已存在，0 其他错误,-2 档案类型不是末级 不能新建项目
+            </summary>
+            <param name="cob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertFile(ZM_DAGL.C_File)">
+            <summary>
+            成功返回附件ID 大于0
+            </summary>
+            <param name="cob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.hasSameModel(ZM_DAGL.C_Model)">
+            <summary>
+            是否有同名模板
+            成功 返回模板ID
+            </summary>
+            <param name="cob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertSample(ZM_DAGL.C_Sample)">
+            <summary>
+            新增样例
+            返回：-3 上级ID不存在
+                  -2 上级ID对应样例已经是末级，不能再添加样例；
+                  -1 同级样例名称已存在；成功返回样例ID (样例ID>0)
+            </summary>
+            <param name="cob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertModel(ZM_DAGL.C_Model)">
+            <summary>
+            新建模板
+            成功 返回模板ID
+            </summary>
+            <param name="cob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertUser(ZM_DAGL.C_User)">
+            <summary>
+            新增系统用户信息
+            要求：部门ID、用户登录名、用户密码必须赋值
+            返回:0,新增失败;1 新增成功;-1登录用户名已存在
+            注：新增后用户状态为未激活
+            </summary>
+            <param name="cob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertDepartment(ZM_DAGL.C_Department)">
+            <summary>
+            新增部门
+            </summary>
+            <param name="cob"></param>
+            <returns>1 成功,0 失败,-1 部门名称已存在</returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertAchType(ZM_DAGL.C_AchType)">
+            <summary>
+            新增档案类型
+            -1类型已存在, -2 上级ID已是末级(已设置模板) 不能再新增类型,-3 上级ID不存在,0 其他错误，成功返回类型ID(类型ID>0)
+            </summary>
+            <param name="cob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateUserGroup_DefaultRight(System.Int32,System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="用户组ID"></param>
+            <param name="项目结构ID"></param>
+            <param name="权限"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateUserGroup_UserList(System.Int32,System.Int32[])">
+            <summary>
+            
+            </summary>
+            <param name="用户组ID"></param>
+            <param name="用户ID列表"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateUserGroup_用户组名称(System.Int32,System.String)">
+            <summary>
+            返回 -1 名称已存在
+            </summary>
+            <param name="用户组ID"></param>
+            <param name="用户组名称"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateIndexTableDataColumns(System.Int32,System.String[],System.Int32[],System.String[])">
+            <summary>
+            更新索引表的字段
+            返回：1 成功
+            </summary>
+            <param name="项目结构ID"></param>
+            <param name="自定义字段"></param>
+            <param name="字段顺序"></param>
+            <param name="字段公开"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateIndexTableData_状态(System.Int32,ZM_DAGL.C_Config.索引表状态)">
+            <summary>
+            更新索引表数据状态
+            </summary>
+            <param name="索引表ID"></param>
+            <param name="状态"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateIndexTableData_表格数据(System.Int32,System.String[])">
+            <summary>
+            更新索引表数据
+            返回：成功 1；试图更新顺序号为0的索引表 -1 ；失败 0
+            </summary>
+            <param name="索引表ID"></param>
+            <param name="自定义表格数据">按字段顺序，非界面显示顺序</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateOutIndexTableData(ZM_DAGL.C_IndexTable,ZM_DAGL.C_IndexTable,System.String)">
+            <summary>
+            更新单一索引表数据
+            返回：成功 1；试图更新顺序号为0的索引表 -1 ；失败 0
+            </summary>
+            <param name="索引表ID"></param>
+            <param name="自定义表格数据">按字段顺序，非界面显示顺序</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateIndexTableData_附件列表(System.Int32,System.Int32[])">
+            <summary>
+            
+            </summary>
+            <param name="索引表ID"></param>
+            <param name="附件列表"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateIndexTableData_文件ID(System.Int32,System.Int32)">
+            <summary>
+            更新索引表的文件ID
+            返回：成功 1；
+            </summary>
+            <param name="索引表ID"></param>
+            <param name="文件ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateIndexTableData_关健字(System.Int32,System.String)">
+            <summary>
+            更新索引表的关健字设置
+            返回：成功 1；
+            </summary>
+            <param name="索引表ID"></param>
+            <param name="关健字"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateIndexTableDataModelData(System.Int32,System.String[])">
+            <summary>
+            更新索引表模板数据
+            返回：成功 1；试图更新顺序号为0的索引表模板 -1 ；失败 0
+            </summary>
+            <param name="索引表模板ID"></param>
+            <param name="自定义表格数据">按字段顺序，非界面显示顺序</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateIndexTableDataModelColumns(System.Int32,System.String[],System.Int32[],System.String[])">
+            <summary>
+            更新索引表模板的字段
+            返回：1 成功
+            </summary>
+            <param name="样例ID"></param>
+            <param name="自定义字段"></param>
+            <param name="字段顺序"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateProjectStructureSampleID(System.Int32,System.Int32)">
+            <summary>
+            更新项目结构的对应样例
+            返回：1 成功；0 失败；-1 已设置样例
+            </summary>
+            <param name="项目结构ID"></param>
+            <param name="样例ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateProjectStructureProjectID(System.Collections.ArrayList,System.Int32)">
+            <summary>
+            批量更新项目结构的项目ID
+            返回：1 成功；0 失败；
+            </summary>
+            <param name="项目结构ID列表"></param>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateProjectStructureParentID(System.Int32,System.Int32)">
+            <summary>
+            更新项的上级结构ID
+            返回：1 成功；0 失败；-1 上级目录已建有索引目录
+            </summary>
+            <param name="项目结构ID"></param>
+            <param name="上级结构ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateProjectStructureName(System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="项目结构ID"></param>
+            <param name="结构名称"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateProjectInfo(System.Int32,System.String[],System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="项目ID"></param>
+            <param name="基本信息字段"></param>
+            <param name="基本信息内容"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateProjectManagers(System.Int32,System.Int32[])">
+            <summary>
+            
+            </summary>
+            <param name="项目ID"></param>
+            <param name="负责人ID列表"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateProjectUsers(System.Int32,System.Int32[])">
+            <summary>
+            
+            </summary>
+            <param name="项目ID"></param>
+            <param name="用户ID列表"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateProjectName(System.Int32,System.String)">
+            <summary>
+            更新项目名称
+            -1 同类型下名称已存在
+            </summary>
+            <param name="项目ID"></param>
+            <param name="项目名称"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateFile(System.Int32,ZM_DAGL.C_Config.自动字段[],ZM_DAGL.C_Config.表内关联[])">
+            <summary>
+            
+            </summary>
+            <param name="附件ID"></param>
+            <param name="自动字段"></param>
+            <param name="表内关联"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateFile2(System.Int32,System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="附件ID"></param>
+            <param name="头附件"></param>
+            <param name="表内关联"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateFileTile(System.Int32,System.String)">
+            <summary>
+            修改附件文件描述
+            </summary>
+            <param name="附件ID"></param>
+            <param name="title"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateFileTXT(System.Int32,System.String)">
+            <summary>
+            修改附件文件TXT//CELL表格的TXT格式，方便对表格进行查询
+            </summary>
+            <param name="附件ID"></param>
+            <param name="title"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateUser(ZM_DAGL.C_User)">
+            <summary>
+            更新用户姓名、密码、激活状态、部门、权限
+            需求：用户ID已赋值
+            返回：1 成功
+            </summary>
+            <param name="cob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateSampleParentID(ZM_DAGL.C_Sample)">
+            <summary>
+            更新样例上级ID
+            上级ID = -1时为根级
+                   >  0时为子级
+            返回：1  成功;
+                  0  其他原因失败
+                  -1 新的上级目录已存在同名样例子级
+                  -2 新的上级ID对应的样例已是末级
+                  -3 新的上级ID不存在
+            </summary>
+            <param name="cob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateSample(ZM_DAGL.C_Sample)">
+            <summary>
+            更新样例名称、表格、附件列表
+            需求：样例ID必须赋值
+            返回 -1  同级名字已存在
+                  1  成功 
+                  0  其他错误
+            </summary>
+            <param name="cob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateModel(ZM_DAGL.C_Model)">
+            <summary>
+            需求：模板ID赋值、模板名称赋值
+            </summary>
+            <param name="cob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateAchType(ZM_DAGL.C_AchType)">
+            <summary>
+            需求：档案类型ID已赋值
+            修改档案类型以及模板列表
+            返回: -1 同级下同名类型已存在,0 失败,1 成功
+            </summary>
+            <param name="cob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UpdateDepartment(ZM_DAGL.C_Department)">
+            <summary>
+            更新部门名称
+            </summary>
+            <param name="cob"></param>
+            <returns>1 成功,0 失败,-1 部门名称已存在</returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.DeleteUserGroup_Project(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="用户组ID"></param>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.DeleteUserGroup_DefaultRight(System.Int32,System.Int32)">
+            <summary>
+            删除用户组中相关索引目录所有的权限
+            返回 0 失败；1 成功 ；2 没有权限需要删除
+            </summary>
+            <param name="用户组ID"></param>
+            <param name="项目结构ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.DeleteProjectStructure(System.Int32,System.String)">
+            <summary>
+            返回：1 成功；0 失败；-1 建有索引表；-2 有子集
+            </summary>
+            <param name="项目结构ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.ClearIndexTableRecord(System.Int32)">
+            <summary>
+            删除索引表操作记录
+            </summary>
+            <param name="索引表ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.ClearIndexTableDataModel_Data(System.Int32)">
+            <summary>
+            清空索引表模板的数据（保留索引表模板字段）
+            </summary>
+            <param name="样例ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.DeleteIndexTableData_Data(System.Int32)">
+            <summary>
+            删除索引中的数据
+            返回： 成功 1；失败 0；(试图删除顺序号为0的数据) -1
+            成功删除后 顺序号自动重新排列
+            </summary>
+            <param name="索引表ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.DeleteSimpleIndexTableData(System.Int32,System.String)">
+            <summary>
+            删除单一索引表中的数据
+            返回： 成功 1；失败 0；(试图删除顺序号为0的数据) -1
+            成功删除后 顺序号自动重新排列
+            </summary>
+            <param name="索引表ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.DeleteIndexTableDataModel_Data(System.Int32)">
+            <summary>
+            删除索引模板中的数据
+            返回： 成功 1；失败 0；(试图删除顺序号为0的数据) -1
+            成功删除后 顺序号自动重新排列
+            </summary>
+            <param name="索引表模板ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.DeleteAchType(System.Int32)">
+            <summary>
+            删除档案类型
+            返回:-1 档案类型不存在,
+            -2 有子类型 不允许删除,
+            -3 有模板列表 不允许删除，
+            -4 已建立对应的项目 不允许删除，
+            0 其他错误
+            1 成功
+            </summary>
+            <param name="档案类型ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.DeleteFile(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="附件ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.DeleteModelNode(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="样例ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.DeleteModel(System.Int32)">
+            <summary>
+             删除某个模板表中的模板名称及样例表、附件表中的相关数据
+            </summary>
+            <param name="模板ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.WriteLog(System.String,ZM_DAGL.C_Config.日志类型)">
+            <summary>
+            记录服务器状态及用户操作日志(DLL内部调用)
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.ReadLog(System.String,System.String,ZM_DAGL.C_Config.日志类型,System.DateTime[])">
+            <summary>
+            显示系统日志
+            </summary>
+            <param name="用户登录名">为空 不限</param>
+            <param name="访问地址">填写IP 或者 电脑名称，为空 不限</param>
+            <param name="type"></param>
+            <param name="dts">null 不限</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.SetSpecialRight(System.Int32,System.Int32,System.String,System.Int32)">
+            <summary>
+            返回 >=0 成功 (为0时 可能已经被删除)
+            </summary>
+            <param name="用户组ID"></param>
+            <param name="索引表ID"></param>
+            <param name="权限"></param>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.CheckProjectStructureInUserGroup(System.Int32,System.Int32)">
+            <summary>
+            检查用户组是否设置了节点的权限
+            </summary>
+            <param name="项目结构ID"></param>
+            <param name="用户组ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.CheckIndexTableName(System.String)">
+            <summary>
+            检查是否存在表名为指定名称的表
+            </summary>
+            <param name="项目结构ID"></param>
+            <param name="用户组ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.CheckIsParentNode_ProjectStructure(System.Int32,System.Int32)">
+            <summary>
+            检查项目结构中节点的关系
+            </summary>
+            <param name="子项目结构ID"></param>
+            <param name="根项目结构ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.CheckModelNode_NextNode(System.Int32)">
+            <summary>
+            检查模板中某节点是否存在下个节点
+            </summary>
+            <param name="子节点结构ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.ClearOpRightUserList(System.Int32,ZM_DAGL.C_Config.索引表操作权限)">
+            <summary>
+            清空索引目录的指定操作权限
+            </summary>
+            <param name="项目结构ID"></param>
+            <param name="权限"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.CheckUserOpRight(System.Int32,System.Int32,ZM_DAGL.C_Config.索引表操作权限)">
+            <summary>
+            检查用户是否有某一操作权限 
+            返回true 有权限
+            </summary>
+            <param name="用户ID"></param>
+            <param name="项目结构ID"></param>
+            <param name="权限"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.CheckUserOpRight2(System.Int32)">
+            <summary>
+            检查用户是否有某一操作权限 
+            返回>0 有权限
+            </summary>
+            <param name="用户ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.DeleteUserOption(System.Int32)">
+            <summary>
+            删除用户 
+            返回true 有权限
+            </summary>
+            <param name="用户ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.SetUserOpRight(System.Int32,System.Int32,ZM_DAGL.C_Config.索引表操作权限,System.Boolean)">
+            <summary>
+            索引目录操作权限设置
+            </summary>
+            <param name="用户ID"></param>
+            <param name="项目结构ID"></param>
+            <param name="权限"></param>
+            <param name="setRight">false 取消权限，true 设置权限</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.UploadFile(System.String,System.String,ZM_DAGL.C_Config.附件类型)">
+            <summary>
+            上传文件(包括cll 表格)
+            成功 返回头附件ID；失败 返回 -1 或 0
+            </summary>
+            <param name="title">文件标题</param>
+            <param name="file"></param>
+            <param name="类型"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.DownloadFile(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="file">输出文件，建议文件名：DateTime.Now.ToString().Replace(":", "").Replace(" ", "") + "_" + C_File.文件类型;</param>
+            <param name="附件ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.SignIn(System.String)">
+            <summary>
+            登录系统;
+            要求:先判断帐户、密码正确后,再调用此方法;
+            返回:false 当前帐户正在使用,不能登录;true 登录成功。
+            </summary>
+            <param name="用户登录名"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.SignIn(System.String,System.String)">
+            <summary>
+            登录系统;
+            返回:true 登录成功
+            </summary>
+            <param name="用户登录名"></param>
+            <param name="密码"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.SignIn_(System.String,System.String)">
+            <summary>
+            登录系统;
+            返回:true 登录成功
+            </summary>
+            <param name="用户登录名"></param>
+            <param name="密码"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.SignOut">
+            <summary>
+            注销、断开连接;
+            重置当前用户与权限
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.KickOut(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="用户登录名"></param>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.CheckIsSignOut">
+            <summary>
+            检查是否已断开连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.SetDateTimeStyle(System.DateTime)">
+            <summary>
+            统一日期格式
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.CheckKeyChar(System.String,System.Boolean)">
+            <summary>
+            检查字符串中是否有不允许使用的字符
+            返回true  有。
+            </summary>
+            <param name="str"></param>
+            <param name="msg">有不允许使用的字符时，是否显示提示框。</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.Enc(System.String)">
+            <summary>
+            加密
+            </summary>
+            <param name="pstr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.Dnc(System.String)">
+            <summary>
+            解密
+            </summary>
+            <param name="pstr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetServerTime">
+            <summary>
+            获得服务器时间
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetStr(System.String[],System.String)">
+            <summary>
+            自动替换字符串中的分割字符sp
+            </summary>
+            <param name="strs"></param>
+            <param name="sp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.createFieldStr(System.String[])">
+            <summary>
+            创建表的字符串
+            </summary>
+            <param name="strs"></param>
+            <param name="sp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.Encrypt(System.String,System.String)">
+             
+            ENC 加密过程 sKey是8位的
+             
+             
+             
+             
+        </member>
+        <member name="M:ZM_DAGL.C_Main.Decrypt(System.String,System.String)">
+             
+            DEC 解密过程 sKey是8位的
+             
+             
+             
+             
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:ZM_DAGL.C_Main.CreateNewDatabase(System.String)" -->
+        <member name="M:ZM_DAGL.C_Main.CloseDBConnection(System.String)">
+            <summary> 
+             关闭数据库连接，在备份、删除之前使用
+            </summary> 
+            <param name="dbname">数据库名</param> 
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.DataRestoreConfigDB(System.String,System.String)">
+            <summary> 
+             还原数据库文件 
+            </summary> 
+            <param name="dbFile">数据库备份文件（含路径）</param> 
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.DataBackupConfigDB(System.String,System.String)">
+            <summary> 
+             备份配置文件config.xml中数据库 
+            </summary> 
+            <param name="backupFolder">备份文件路径</param> 
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.DataDeleteDB(System.String)">
+            <summary> 
+             删除数据库 
+            </summary> 
+            <param name="dbFile">数据库名</param> 
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertProject2(ZM_DAGL.C_Project,System.String)">
+            <summary>
+            新建项目
+            成功返回项目ID，-1 同档案类型下项目名称已存在，0 其他错误,-2 档案类型不是末级 不能新建项目
+            </summary>
+            <param name="cob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertProjectStructure2(ZM_DAGL.C_ProjectStructure,System.String,System.Int32)">
+            <summary>
+            成功返回项目结构ID，-1 同级结构结构名称已存在，0其他错误，-2 上级ID已建立索引目录
+            </summary>
+            <param name="cob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertProjectStructure2(ZM_DAGL.C_ProjectStructure,System.String)">
+            <summary>
+            成功返回项目结构ID，-1 同级结构结构名称已存在，0其他错误，-2 上级ID已建立索引目录
+            </summary>
+            <param name="cob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertIndexTable2(ZM_DAGL.C_IndexTable,System.String)">
+            <summary>
+            插入索引目录数据
+            </summary>
+            <param name="cit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertAttachData2(ZM_DAGL.C_File,System.String)">
+            <summary>
+            插入附件数据
+            </summary>
+            <param name="cit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertModel2(ZM_DAGL.C_Model,System.String)">
+            <summary>
+            新建模板2
+            成功 返回模板ID
+            </summary>
+            <param name="cob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertSample2(ZM_DAGL.C_Sample,System.String)">
+            <summary>
+            新增样例2
+            返回：-3 上级ID不存在
+                  -2 上级ID对应样例已经是末级，不能再添加样例；
+                  -1 同级样例名称已存在；成功返回样例ID (样例ID>0)
+            </summary>
+            <param name="cob"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertIndexTableDataModel2(ZM_DAGL.C_IndexTableModel,System.String)">
+            <summary>
+            插入数据到索引模板表
+            返回：成功 1；失败 0；索引表还未创建 -1；错误的顺序号值 -2
+            </summary>
+            <param name="样例ID"></param>
+            <param name="自定义数据"></param>
+            <param name="顺序号">起始1</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertDothing2(ZM_DAGL.C_Dothing,System.String)">
+            <summary>
+            插入数据到完成事件表
+            返回：成功 1；失败 0；索引表还未创建 -1；错误的顺序号值 -2
+            </summary>
+            <param name="样例ID"></param>
+            <param name="自定义数据"></param>
+            <param name="顺序号">起始1</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.DeleteBackupFile(System.String,System.String)">
+            <summary>
+            删除服务器指定文件
+            </summary>
+            <param name="httpLink">ASHX文件</param>
+            <param name="dataLink">数据相对路径</param>
+            <returns>删除成功success  删除失败 error</returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectInfo(System.String)">
+            <summary>
+            获取项目信息
+            </summary>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetAttachInfo(System.String)">
+            <summary>
+            获取附件
+            </summary>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectStruct(System.String)">
+            <summary>
+            获取项目结构信息
+            </summary>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetProjectModel2(System.String)">
+            <summary>
+            获取模板表
+            </summary>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetSamples2(System.String)">
+            <summary>
+            获取样例表
+            </summary>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetIndexTableModel2(System.String)">
+            <summary>
+            获取索引表模板
+            </summary>
+            <param name="项目ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetIndexTableData2(System.String)">
+            <summary>
+            获取索引表数据
+            </summary>
+            <param name="项目结构ID"></param>
+            <param name="顺序号">大于0</param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetDothings(System.String)">
+            <summary>
+            按文件ID获取完成事件情况
+            </summary>
+            <param name="文件ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetDothingByProjectConstID(System.Int32)">
+            <summary>
+            按文件ID获取完成事件情况
+            </summary>
+            <param name="文件ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.InsertDothing(ZM_DAGL.C_Dothing)">
+            <summary>
+            插入数据到完成事件表
+            返回：成功 索引表ID；失败 0；已存在相应的完成事件表 -2
+            </summary>
+            <param name="完成事件类"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.DeleteDothing(System.Int32)">
+            <summary>
+            删除完成事件表中的相关设置
+            </summary>
+            <param name="文件ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetDothinCount(System.Int32)">
+            <summary>
+            获取完成事件条数
+            </summary>
+            <param name="项目结构ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.C_Main.GetDothingQuery(System.Collections.ArrayList)">
+            <summary>
+            完成查询，获取查询结果
+            </summary>
+            <param name="getData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ZM_DAGL.frmImRunning.#ctor(System.Int32)">
+            <summary>
+            1 上传
+            2 读取
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="F:ZM_DAGL.frmImRunning.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ZM_DAGL.frmImRunning.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ZM_DAGL.frmImRunning.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+    </members>
+</doc>
