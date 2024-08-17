@@ -1,0 +1,10 @@
+cmd:
+
+>ftp
+ftp>open
+到 localhost 21
+
+
+
+
+
