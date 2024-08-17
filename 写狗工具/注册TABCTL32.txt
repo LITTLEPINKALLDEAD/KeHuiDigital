@@ -1,0 +1,1 @@
+文件复制到C:\Windows\SysWOW64目录，然后打开的CMD命令提示符窗口中输入cd \windows\syswow64, 最后，输入【regsvr32 XXX.dll】，注册成功

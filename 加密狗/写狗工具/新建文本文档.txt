@@ -1,0 +1,2 @@
+管理员打开cmd，运行如下
+regsvr32 TABCTL32.OCX
