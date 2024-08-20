@@ -1,0 +1,53 @@
+创建安装用户 (root用户)
+useradd -m kingbase
+passwd kingbase
+
+创建安装目录并赋予写入权限(root用户)
+mkdir -p /opt/Kingbase/ES/V8
+chmod o+rwx /opt/Kingbase/ES/V8
+
+重启并切换到kingbase用户
+安装:sh setup.sh
+
+恭喜！KingbaseES V8 已成功地安装到：
+
+/opt/Kingbase/ES/V8
+
+如果您需要将 KingbaseES V8 注册为系统服务，请运行
+
+/opt/Kingbase/ES/V8/install/script/root.sh
+
+ 单击“完成”以退出安装程序。
+
+192.168.1.156服务器的人大金仓数据库：
+IP地址：192.168.1.21（桥接模式）
+端口：54321
+用户名：sysyem
+密码：1234567A
+
+如遇问题：XXX不在 sudoers 文件中，此事将被报告，参考下列网站：
+https://blog.csdn.net/bean_business/article/details/112248565
+
+data目录：/opt/Kingbase/ES/V8/data
+
+stl目录：/opt/Kingbase/ES/V8/Server/bin/sys_ctl
+
+./sys_ctl -D /opt/Kingbase/ES/V8/data  restart
+
+启动服务命令：
+
+先cd到目录：cd /opt/Kingbase/ES/V8/Server/bin
+重启：./sys_ctl -D /opt/Kingbase/ES/V8/data  restart
+启动：./sys_ctl -D /opt/Kingbase/ES/V8/data  start
+停止：./sys_ctl -D /opt/Kingbase/ES/V8/data  stop
+查看状态：./sys_ctl -D /opt/Kingbase/ES/V8/data  status
+
+安装时候需要选择的下列参数：
+pg模式
+
+加密方式：
+sm4 加密
+
+身份认证：
+scram-sha-256 
+

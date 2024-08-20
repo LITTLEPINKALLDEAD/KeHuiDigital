@@ -1,0 +1,7 @@
+SQL Server:
+用户名:sa
+密码:sa_kehui
+
+ftp
+用户名:test
+密码：123456

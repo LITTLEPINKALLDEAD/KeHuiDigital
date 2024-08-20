@@ -1,0 +1,33 @@
+安装net环境
+https://learn.microsoft.com/zh-cn/dotnet/core/install/linux-ubuntu#register-the-microsoft-package-repository
+
+wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+sudo apt update
+sudo apt install aspnetcore-runtime-6.0
+
+
+输入指令 dotnet --info
+
+
+
+openKylin 1.0 的内核是基于 Ubuntu 20.04 LTS   https://learn.microsoft.com/zh-cn/dotnet/core/install/linux-ubuntu-2004
+
+wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+sudo apt-get update && \
+  sudo apt-get install -y dotnet-sdk-8.0
+
+
+
+---------------------------- 运行网站
+dotnet testn8.mvc.dll --urls "http://*:5000"
+
+端口隐射 虚拟5000->主机5001
+通过端口隐射宿主访问虚拟机网站 
+http://localhost:5001/
+http://192.168.xx.xxx:5000/
+
+
