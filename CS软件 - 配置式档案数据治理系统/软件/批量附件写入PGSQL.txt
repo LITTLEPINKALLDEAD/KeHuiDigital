@@ -1,0 +1,15 @@
+DO $$
+DECLARE
+    case_number INT := 1;  -- 案卷顺序号
+    file_number INT;
+    image_file TEXT;
+BEGIN
+    -- 案卷顺序号为1时，文件序号为0-6
+    FOR file_number IN 0..6 LOOP
+        image_file := case_number || '_' || file_number || '.pdf';
+        UPDATE meta.detail
+        SET "imagePath" = 'attach11/' || case_number,
+            "imageFile" = image_file
+        WHERE "案卷顺序号" = case_number and "文件序号" = file_number;  -- 确保只更新案卷顺序号为1的记录
+    END LOOP;
+END $$;
