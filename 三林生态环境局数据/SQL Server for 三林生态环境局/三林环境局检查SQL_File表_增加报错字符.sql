@@ -2,12 +2,12 @@ SELECT
     [室编档号],
     [机构或问题],
     CASE 
-		WHEN [机构或问题] LIKE '%[（]%' THEN '中文左括号'
-		WHEN [机构或问题] LIKE '%[）]%' THEN '中文右括号'
+		WHEN UNICODE(SUBSTRING([机构或问题], CHARINDEX('（', [机构或问题]), 1)) = 65288 THEN '中文左括号'
+        WHEN UNICODE(SUBSTRING([机构或问题], CHARINDEX('）', [机构或问题]), 1)) = 65289 THEN '中文右括号'
         WHEN [机构或问题] LIKE '%[ ]%' THEN '空格'
         WHEN [机构或问题] LIKE '%["]%' THEN '双引号'
-        WHEN [机构或问题] LIKE '%[<]%' THEN '小于号'
-        WHEN [机构或问题] LIKE '%[>]%' THEN '大于号'
+        WHEN UNICODE(SUBSTRING([机构或问题], CHARINDEX('<', [机构或问题]), 1)) = 60 THEN '半角小于号'
+        WHEN UNICODE(SUBSTRING([机构或问题], CHARINDEX('>', [机构或问题]), 1)) = 62 THEN '半角大于号'
         WHEN [机构或问题] LIKE '%[=]%' THEN '等号'
         WHEN [机构或问题] LIKE '%[{]%' THEN '左大括号'
         WHEN [机构或问题] LIKE '%[}]%' THEN '右大括号'
@@ -19,19 +19,19 @@ SELECT
 FROM 
     [三林环境局Test].[dbo].[FILE]
 WHERE 
-    ([机构或问题] LIKE '%[（]%'
-    OR [机构或问题] LIKE '%[）]%'
+    (UNICODE(SUBSTRING([机构或问题], CHARINDEX('（', [机构或问题]), 1)) = 65288
+    OR UNICODE(SUBSTRING([机构或问题], CHARINDEX('）', [机构或问题]), 1)) = 65289
     OR [机构或问题] LIKE '%[ ]%' 
     OR [机构或问题] LIKE '%["]%' 
-    OR [机构或问题] LIKE '%[<]%' 
-    OR [机构或问题] LIKE '%[>]%' 
+    OR UNICODE(SUBSTRING([机构或问题], CHARINDEX('<', [机构或问题]), 1)) = 60
+    OR UNICODE(SUBSTRING([机构或问题], CHARINDEX('>', [机构或问题]), 1)) = 62
     OR [机构或问题] LIKE '%[=]%' 
     OR [机构或问题] LIKE '%[{]%' 
     OR [机构或问题] LIKE '%[}]%' 
     OR [机构或问题] LIKE '%[&]%' 
     OR [机构或问题] LIKE '%[%]%' 
-    OR [机构或问题] LIKE '%[*]%')
-    AND [机构或问题] NOT LIKE '%市容环卫处（垃圾分类工作处）%'; --排除"市容环卫处（垃圾分类工作处）"的查询结果
+    OR [机构或问题] LIKE '%[*]%') AND [机构或问题] != '市容环卫处（垃圾分类工作处）'; --排除 市容环卫处（垃圾分类工作处） 的查询结果
+    
     
 SELECT 
     [室编档号],
@@ -39,8 +39,8 @@ SELECT
     CASE 
         WHEN [题名] LIKE '%[ ]%' THEN '空格'
         WHEN [题名] LIKE '%["]%' THEN '双引号'
-        WHEN [题名] LIKE '%[<]%' THEN '小于号'
-        WHEN [题名] LIKE '%[>]%' THEN '大于号'
+        WHEN UNICODE(SUBSTRING([题名], CHARINDEX('<', [题名]), 1)) = 60 THEN '半角小于号'
+        WHEN UNICODE(SUBSTRING([题名], CHARINDEX('>', [题名]), 1)) = 62 THEN '半角大于号'
         WHEN [题名] LIKE '%[=]%' THEN '等号'
         WHEN [题名] LIKE '%[{]%' THEN '左大括号'
         WHEN [题名] LIKE '%[}]%' THEN '右大括号'
@@ -53,8 +53,8 @@ FROM
 WHERE 
     [题名] LIKE '%[ ]%' 
     OR [题名] LIKE '%["]%' 
-    OR [题名] LIKE '%[<]%' 
-    OR [题名] LIKE '%[>]%' 
+    OR UNICODE(SUBSTRING([题名], CHARINDEX('<', [题名]), 1)) = 60
+    OR UNICODE(SUBSTRING([题名], CHARINDEX('>', [题名]), 1)) = 62
     OR [题名] LIKE '%[=]%' 
     OR [题名] LIKE '%[{]%' 
     OR [题名] LIKE '%[}]%' 
@@ -67,8 +67,8 @@ SELECT
     CASE 
         WHEN [责任者] LIKE '%[ ]%' THEN '空格'
         WHEN [责任者] LIKE '%["]%' THEN '双引号'
-        WHEN [责任者] LIKE '%[<]%' THEN '小于号'
-        WHEN [责任者] LIKE '%[>]%' THEN '大于号'
+        WHEN UNICODE(SUBSTRING([责任者], CHARINDEX('<', [责任者]), 1)) = 60 THEN '半角小于号'
+        WHEN UNICODE(SUBSTRING([责任者], CHARINDEX('>', [责任者]), 1)) = 62 THEN '半角大于号'
         WHEN [责任者] LIKE '%[=]%' THEN '等号'
         WHEN [责任者] LIKE '%[{]%' THEN '左大括号'
         WHEN [责任者] LIKE '%[}]%' THEN '右大括号'
@@ -82,8 +82,8 @@ FROM
 WHERE 
     [责任者] LIKE '%[ ]%' 
     OR [责任者] LIKE '%["]%' 
-    OR [责任者] LIKE '%[<]%' 
-    OR [责任者] LIKE '%[>]%' 
+    OR UNICODE(SUBSTRING([责任者], CHARINDEX('<', [责任者]), 1)) = 60
+    OR UNICODE(SUBSTRING([责任者], CHARINDEX('>', [责任者]), 1)) = 62
     OR [责任者] LIKE '%[=]%' 
     OR [责任者] LIKE '%[{]%' 
     OR [责任者] LIKE '%[}]%' 
@@ -97,8 +97,8 @@ SELECT
     CASE 
         WHEN [文件编号] LIKE '%[ ]%' THEN '空格'
         WHEN [文件编号] LIKE '%["]%' THEN '双引号'
-        WHEN [文件编号] LIKE '%[<]%' THEN '小于号'
-        WHEN [文件编号] LIKE '%[>]%' THEN '大于号'
+        WHEN UNICODE(SUBSTRING([文件编号], CHARINDEX('<', [文件编号]), 1)) = 60 THEN '半角小于号'
+        WHEN UNICODE(SUBSTRING([文件编号], CHARINDEX('>', [文件编号]), 1)) = 62 THEN '半角大于号'
         WHEN [文件编号] LIKE '%[=]%' THEN '等号'
         WHEN [文件编号] LIKE '%[{]%' THEN '左大括号'
         WHEN [文件编号] LIKE '%[}]%' THEN '右大括号'
@@ -112,8 +112,8 @@ FROM
 WHERE 
     [文件编号] LIKE '%[ ]%' 
     OR [文件编号] LIKE '%["]%' 
-    OR [文件编号] LIKE '%[<]%' 
-    OR [文件编号] LIKE '%[>]%' 
+    OR UNICODE(SUBSTRING([文件编号], CHARINDEX('<', [文件编号]), 1)) = 60
+    OR UNICODE(SUBSTRING([文件编号], CHARINDEX('>', [文件编号]), 1)) = 62
     OR [文件编号] LIKE '%[=]%' 
     OR [文件编号] LIKE '%[{]%' 
     OR [文件编号] LIKE '%[}]%' 
@@ -129,8 +129,8 @@ SELECT
 		WHEN [归档单位] LIKE '%[）]%' THEN '中文右括号'
         WHEN [归档单位] LIKE '%[ ]%' THEN '空格'
         WHEN [归档单位] LIKE '%["]%' THEN '双引号'
-        WHEN [归档单位] LIKE '%[<]%' THEN '小于号'
-        WHEN [归档单位] LIKE '%[>]%' THEN '大于号'
+        WHEN UNICODE(SUBSTRING([归档单位], CHARINDEX('<', [归档单位]), 1)) = 60 THEN '半角小于号'
+        WHEN UNICODE(SUBSTRING([归档单位], CHARINDEX('>', [归档单位]), 1)) = 62 THEN '半角大于号'
         WHEN [归档单位] LIKE '%[=]%' THEN '等号'
         WHEN [归档单位] LIKE '%[{]%' THEN '左大括号'
         WHEN [归档单位] LIKE '%[}]%' THEN '右大括号'
@@ -146,8 +146,8 @@ WHERE
 	OR [归档单位] LIKE '%[）]%'
     OR [归档单位] LIKE '%[ ]%' 
     OR [归档单位] LIKE '%["]%' 
-    OR [归档单位] LIKE '%[<]%' 
-    OR [归档单位] LIKE '%[>]%' 
+    OR UNICODE(SUBSTRING([归档单位], CHARINDEX('<', [归档单位]), 1)) = 60
+    OR UNICODE(SUBSTRING([归档单位], CHARINDEX('>', [归档单位]), 1)) = 62 
     OR [归档单位] LIKE '%[=]%' 
     OR [归档单位] LIKE '%[{]%' 
     OR [归档单位] LIKE '%[}]%' 
@@ -163,8 +163,8 @@ WHERE
 		WHEN [密级] LIKE '%[）]%' THEN '中文右括号'
         WHEN [密级] LIKE '%[ ]%' THEN '空格'
         WHEN [密级] LIKE '%["]%' THEN '双引号'
-        WHEN [密级] LIKE '%[<]%' THEN '小于号'
-        WHEN [密级] LIKE '%[>]%' THEN '大于号'
+        WHEN UNICODE(SUBSTRING([密级], CHARINDEX('<', [密级]), 1)) = 60 THEN '半角小于号'
+        WHEN UNICODE(SUBSTRING([密级], CHARINDEX('>', [密级]), 1)) = 62 THEN '半角大于号'
         WHEN [密级] LIKE '%[=]%' THEN '等号'
         WHEN [密级] LIKE '%[{]%' THEN '左大括号'
         WHEN [密级] LIKE '%[}]%' THEN '右大括号'
@@ -180,8 +180,8 @@ WHERE
 	OR [密级] LIKE '%[）]%'
     OR [密级] LIKE '%[ ]%' 
     OR [密级] LIKE '%["]%' 
-    OR [密级] LIKE '%[<]%' 
-    OR [密级] LIKE '%[>]%' 
+    OR UNICODE(SUBSTRING([密级], CHARINDEX('<', [密级]), 1)) = 60
+    OR UNICODE(SUBSTRING([密级], CHARINDEX('>', [密级]), 1)) = 62 
     OR [密级] LIKE '%[=]%' 
     OR [密级] LIKE '%[{]%' 
     OR [密级] LIKE '%[}]%' 
@@ -197,8 +197,8 @@ WHERE
 		WHEN [保管期限] LIKE '%[）]%' THEN '中文右括号'
         WHEN [保管期限] LIKE '%[ ]%' THEN '空格'
         WHEN [保管期限] LIKE '%["]%' THEN '双引号'
-        WHEN [保管期限] LIKE '%[<]%' THEN '小于号'
-        WHEN [保管期限] LIKE '%[>]%' THEN '大于号'
+        WHEN UNICODE(SUBSTRING([保管期限], CHARINDEX('<', [保管期限]), 1)) = 60 THEN '半角小于号'
+        WHEN UNICODE(SUBSTRING([保管期限], CHARINDEX('>', [保管期限]), 1)) = 62 THEN '半角大于号'
         WHEN [保管期限] LIKE '%[=]%' THEN '等号'
         WHEN [保管期限] LIKE '%[{]%' THEN '左大括号'
         WHEN [保管期限] LIKE '%[}]%' THEN '右大括号'
@@ -214,8 +214,8 @@ WHERE
 	OR [保管期限] LIKE '%[）]%'
     OR [保管期限] LIKE '%[ ]%' 
     OR [保管期限] LIKE '%["]%' 
-    OR [保管期限] LIKE '%[<]%' 
-    OR [保管期限] LIKE '%[>]%' 
+    OR UNICODE(SUBSTRING([保管期限], CHARINDEX('<', [保管期限]), 1)) = 60
+    OR UNICODE(SUBSTRING([保管期限], CHARINDEX('>', [保管期限]), 1)) = 62 
     OR [保管期限] LIKE '%[=]%' 
     OR [保管期限] LIKE '%[{]%' 
     OR [保管期限] LIKE '%[}]%' 
@@ -231,8 +231,8 @@ SELECT
 		WHEN [整理人] LIKE '%[）]%' THEN '中文右括号'
         WHEN [整理人] LIKE '%[ ]%' THEN '空格'
         WHEN [整理人] LIKE '%["]%' THEN '双引号'
-        WHEN [整理人] LIKE '%[<]%' THEN '小于号'
-        WHEN [整理人] LIKE '%[>]%' THEN '大于号'
+        WHEN UNICODE(SUBSTRING([整理人], CHARINDEX('<', [整理人]), 1)) = 60 THEN '半角小于号'
+        WHEN UNICODE(SUBSTRING([整理人], CHARINDEX('>', [整理人]), 1)) = 62 THEN '半角大于号'
         WHEN [整理人] LIKE '%[=]%' THEN '等号'
         WHEN [整理人] LIKE '%[{]%' THEN '左大括号'
         WHEN [整理人] LIKE '%[}]%' THEN '右大括号'
@@ -248,8 +248,8 @@ WHERE
 	OR [整理人] LIKE '%[）]%'
     OR [整理人] LIKE '%[ ]%' 
     OR [整理人] LIKE '%["]%' 
-    OR [整理人] LIKE '%[<]%' 
-    OR [整理人] LIKE '%[>]%' 
+    OR UNICODE(SUBSTRING([整理人], CHARINDEX('<', [整理人]), 1)) = 60
+    OR UNICODE(SUBSTRING([整理人], CHARINDEX('>', [整理人]), 1)) = 62
     OR [整理人] LIKE '%[=]%' 
     OR [整理人] LIKE '%[{]%' 
     OR [整理人] LIKE '%[}]%' 
@@ -265,8 +265,8 @@ SELECT
 		WHEN [检查人] LIKE '%[）]%' THEN '中文右括号'
         WHEN [检查人] LIKE '%[ ]%' THEN '空格'
         WHEN [检查人] LIKE '%["]%' THEN '双引号'
-        WHEN [检查人] LIKE '%[<]%' THEN '小于号'
-        WHEN [检查人] LIKE '%[>]%' THEN '大于号'
+        WHEN UNICODE(SUBSTRING([检查人], CHARINDEX('<', [检查人]), 1)) = 60 THEN '半角小于号'
+        WHEN UNICODE(SUBSTRING([检查人], CHARINDEX('>', [检查人]), 1)) = 62 THEN '半角大于号'
         WHEN [检查人] LIKE '%[=]%' THEN '等号'
         WHEN [检查人] LIKE '%[{]%' THEN '左大括号'
         WHEN [检查人] LIKE '%[}]%' THEN '右大括号'
@@ -282,8 +282,8 @@ WHERE
 	OR [检查人] LIKE '%[）]%'
     OR [检查人] LIKE '%[ ]%' 
     OR [检查人] LIKE '%["]%' 
-    OR [检查人] LIKE '%[<]%' 
-    OR [检查人] LIKE '%[>]%' 
+    OR UNICODE(SUBSTRING([检查人], CHARINDEX('<', [检查人]), 1)) = 60
+    OR UNICODE(SUBSTRING([检查人], CHARINDEX('>', [检查人]), 1)) = 62
     OR [检查人] LIKE '%[=]%' 
     OR [检查人] LIKE '%[{]%' 
     OR [检查人] LIKE '%[}]%' 
@@ -299,8 +299,8 @@ SELECT
 		WHEN [档案类型] LIKE '%[）]%' THEN '中文右括号'
         WHEN [档案类型] LIKE '%[ ]%' THEN '空格'
         WHEN [档案类型] LIKE '%["]%' THEN '双引号'
-        WHEN [档案类型] LIKE '%[<]%' THEN '小于号'
-        WHEN [档案类型] LIKE '%[>]%' THEN '大于号'
+        WHEN UNICODE(SUBSTRING([档案类型], CHARINDEX('<', [档案类型]), 1)) = 60 THEN '半角小于号'
+        WHEN UNICODE(SUBSTRING([档案类型], CHARINDEX('>', [档案类型]), 1)) = 62 THEN '半角大于号'
         WHEN [档案类型] LIKE '%[=]%' THEN '等号'
         WHEN [档案类型] LIKE '%[{]%' THEN '左大括号'
         WHEN [档案类型] LIKE '%[}]%' THEN '右大括号'
@@ -316,8 +316,8 @@ WHERE
 	OR [档案类型] LIKE '%[）]%'
     OR [档案类型] LIKE '%[ ]%' 
     OR [档案类型] LIKE '%["]%' 
-    OR [档案类型] LIKE '%[<]%' 
-    OR [档案类型] LIKE '%[>]%' 
+    OR UNICODE(SUBSTRING([档案类型], CHARINDEX('<', [档案类型]), 1)) = 60
+    OR UNICODE(SUBSTRING([档案类型], CHARINDEX('>', [档案类型]), 1)) = 62
     OR [档案类型] LIKE '%[=]%' 
     OR [档案类型] LIKE '%[{]%' 
     OR [档案类型] LIKE '%[}]%' 
@@ -333,8 +333,8 @@ SELECT
 		WHEN [聚合层次] LIKE '%[）]%' THEN '中文右括号'
         WHEN [聚合层次] LIKE '%[ ]%' THEN '空格'
         WHEN [聚合层次] LIKE '%["]%' THEN '双引号'
-        WHEN [聚合层次] LIKE '%[<]%' THEN '小于号'
-        WHEN [聚合层次] LIKE '%[>]%' THEN '大于号'
+        WHEN UNICODE(SUBSTRING([聚合层次], CHARINDEX('<', [聚合层次]), 1)) = 60 THEN '半角小于号'
+        WHEN UNICODE(SUBSTRING([聚合层次], CHARINDEX('>', [聚合层次]), 1)) = 62 THEN '半角大于号'
         WHEN [聚合层次] LIKE '%[=]%' THEN '等号'
         WHEN [聚合层次] LIKE '%[{]%' THEN '左大括号'
         WHEN [聚合层次] LIKE '%[}]%' THEN '右大括号'
@@ -350,8 +350,8 @@ WHERE
 	OR [聚合层次] LIKE '%[）]%'
     OR [聚合层次] LIKE '%[ ]%' 
     OR [聚合层次] LIKE '%["]%' 
-    OR [聚合层次] LIKE '%[<]%' 
-    OR [聚合层次] LIKE '%[>]%' 
+    OR UNICODE(SUBSTRING([聚合层次], CHARINDEX('<', [聚合层次]), 1)) = 60
+    OR UNICODE(SUBSTRING([聚合层次], CHARINDEX('>', [聚合层次]), 1)) = 62
     OR [聚合层次] LIKE '%[=]%' 
     OR [聚合层次] LIKE '%[{]%' 
     OR [聚合层次] LIKE '%[}]%' 
@@ -367,8 +367,8 @@ SELECT
 		WHEN [载体类型] LIKE '%[）]%' THEN '中文右括号'
         WHEN [载体类型] LIKE '%[ ]%' THEN '空格'
         WHEN [载体类型] LIKE '%["]%' THEN '双引号'
-        WHEN [载体类型] LIKE '%[<]%' THEN '小于号'
-        WHEN [载体类型] LIKE '%[>]%' THEN '大于号'
+        WHEN UNICODE(SUBSTRING([载体类型], CHARINDEX('<', [载体类型]), 1)) = 60 THEN '半角小于号'
+        WHEN UNICODE(SUBSTRING([载体类型], CHARINDEX('>', [载体类型]), 1)) = 62 THEN '半角大于号'
         WHEN [载体类型] LIKE '%[=]%' THEN '等号'
         WHEN [载体类型] LIKE '%[{]%' THEN '左大括号'
         WHEN [载体类型] LIKE '%[}]%' THEN '右大括号'
@@ -384,8 +384,8 @@ WHERE
 	OR [载体类型] LIKE '%[）]%'
     OR [载体类型] LIKE '%[ ]%' 
     OR [载体类型] LIKE '%["]%' 
-    OR [载体类型] LIKE '%[<]%' 
-    OR [载体类型] LIKE '%[>]%' 
+    OR UNICODE(SUBSTRING([载体类型], CHARINDEX('<', [载体类型]), 1)) = 60
+    OR UNICODE(SUBSTRING([载体类型], CHARINDEX('>', [载体类型]), 1)) = 62
     OR [载体类型] LIKE '%[=]%' 
     OR [载体类型] LIKE '%[{]%' 
     OR [载体类型] LIKE '%[}]%' 
@@ -401,8 +401,8 @@ SELECT
 		WHEN [已数字化] LIKE '%[）]%' THEN '中文右括号'
         WHEN [已数字化] LIKE '%[ ]%' THEN '空格'
         WHEN [已数字化] LIKE '%["]%' THEN '双引号'
-        WHEN [已数字化] LIKE '%[<]%' THEN '小于号'
-        WHEN [已数字化] LIKE '%[>]%' THEN '大于号'
+        WHEN UNICODE(SUBSTRING([已数字化], CHARINDEX('<', [已数字化]), 1)) = 60 THEN '半角小于号'
+        WHEN UNICODE(SUBSTRING([已数字化], CHARINDEX('>', [已数字化]), 1)) = 62 THEN '半角大于号'
         WHEN [已数字化] LIKE '%[=]%' THEN '等号'
         WHEN [已数字化] LIKE '%[{]%' THEN '左大括号'
         WHEN [已数字化] LIKE '%[}]%' THEN '右大括号'
@@ -418,8 +418,8 @@ WHERE
 	OR [已数字化] LIKE '%[）]%'
     OR [已数字化] LIKE '%[ ]%' 
     OR [已数字化] LIKE '%["]%' 
-    OR [已数字化] LIKE '%[<]%' 
-    OR [已数字化] LIKE '%[>]%' 
+    OR UNICODE(SUBSTRING([已数字化], CHARINDEX('<', [已数字化]), 1)) = 60
+    OR UNICODE(SUBSTRING([已数字化], CHARINDEX('>', [已数字化]), 1)) = 62
     OR [已数字化] LIKE '%[=]%' 
     OR [已数字化] LIKE '%[{]%' 
     OR [已数字化] LIKE '%[}]%' 
@@ -435,8 +435,8 @@ SELECT
 		WHEN [著录者] LIKE '%[）]%' THEN '中文右括号'
         WHEN [著录者] LIKE '%[ ]%' THEN '空格'
         WHEN [著录者] LIKE '%["]%' THEN '双引号'
-        WHEN [著录者] LIKE '%[<]%' THEN '小于号'
-        WHEN [著录者] LIKE '%[>]%' THEN '大于号'
+        WHEN UNICODE(SUBSTRING([著录者], CHARINDEX('<', [著录者]), 1)) = 60 THEN '半角小于号'
+        WHEN UNICODE(SUBSTRING([著录者], CHARINDEX('>', [著录者]), 1)) = 62 THEN '半角大于号'
         WHEN [著录者] LIKE '%[=]%' THEN '等号'
         WHEN [著录者] LIKE '%[{]%' THEN '左大括号'
         WHEN [著录者] LIKE '%[}]%' THEN '右大括号'
@@ -452,8 +452,8 @@ WHERE
 	OR [著录者] LIKE '%[）]%'
     OR [著录者] LIKE '%[ ]%' 
     OR [著录者] LIKE '%["]%' 
-    OR [著录者] LIKE '%[<]%' 
-    OR [著录者] LIKE '%[>]%' 
+    OR UNICODE(SUBSTRING([著录者], CHARINDEX('<', [著录者]), 1)) = 60
+    OR UNICODE(SUBSTRING([著录者], CHARINDEX('>', [著录者]), 1)) = 62
     OR [著录者] LIKE '%[=]%' 
     OR [著录者] LIKE '%[{]%' 
     OR [著录者] LIKE '%[}]%' 
@@ -469,8 +469,8 @@ SELECT
 		WHEN [著录者单位] LIKE '%[）]%' THEN '中文右括号'
         WHEN [著录者单位] LIKE '%[ ]%' THEN '空格'
         WHEN [著录者单位] LIKE '%["]%' THEN '双引号'
-        WHEN [著录者单位] LIKE '%[<]%' THEN '小于号'
-        WHEN [著录者单位] LIKE '%[>]%' THEN '大于号'
+        WHEN UNICODE(SUBSTRING([著录者单位], CHARINDEX('<', [著录者单位]), 1)) = 60 THEN '半角小于号'
+        WHEN UNICODE(SUBSTRING([著录者单位], CHARINDEX('>', [著录者单位]), 1)) = 62 THEN '半角大于号'
         WHEN [著录者单位] LIKE '%[=]%' THEN '等号'
         WHEN [著录者单位] LIKE '%[{]%' THEN '左大括号'
         WHEN [著录者单位] LIKE '%[}]%' THEN '右大括号'
@@ -486,8 +486,8 @@ WHERE
 	OR [著录者单位] LIKE '%[）]%'
     OR [著录者单位] LIKE '%[ ]%' 
     OR [著录者单位] LIKE '%["]%' 
-    OR [著录者单位] LIKE '%[<]%' 
-    OR [著录者单位] LIKE '%[>]%' 
+    OR UNICODE(SUBSTRING([著录者单位], CHARINDEX('<', [著录者单位]), 1)) = 60
+    OR UNICODE(SUBSTRING([著录者单位], CHARINDEX('>', [著录者单位]), 1)) = 62
     OR [著录者单位] LIKE '%[=]%' 
     OR [著录者单位] LIKE '%[{]%' 
     OR [著录者单位] LIKE '%[}]%' 
@@ -503,8 +503,8 @@ SELECT
 		WHEN [政府信息属性] LIKE '%[）]%' THEN '中文右括号'
         WHEN [政府信息属性] LIKE '%[ ]%' THEN '空格'
         WHEN [政府信息属性] LIKE '%["]%' THEN '双引号'
-        WHEN [政府信息属性] LIKE '%[<]%' THEN '小于号'
-        WHEN [政府信息属性] LIKE '%[>]%' THEN '大于号'
+        WHEN UNICODE(SUBSTRING([政府信息属性], CHARINDEX('<', [政府信息属性]), 1)) = 60 THEN '半角小于号'
+        WHEN UNICODE(SUBSTRING([政府信息属性], CHARINDEX('>', [政府信息属性]), 1)) = 62 THEN '半角大于号'
         WHEN [政府信息属性] LIKE '%[=]%' THEN '等号'
         WHEN [政府信息属性] LIKE '%[{]%' THEN '左大括号'
         WHEN [政府信息属性] LIKE '%[}]%' THEN '右大括号'
@@ -520,8 +520,8 @@ WHERE
 	OR [政府信息属性] LIKE '%[）]%'
     OR [政府信息属性] LIKE '%[ ]%' 
     OR [政府信息属性] LIKE '%["]%' 
-    OR [政府信息属性] LIKE '%[<]%' 
-    OR [政府信息属性] LIKE '%[>]%' 
+    OR UNICODE(SUBSTRING([政府信息属性], CHARINDEX('<', [政府信息属性]), 1)) = 60
+    OR UNICODE(SUBSTRING([政府信息属性], CHARINDEX('>', [政府信息属性]), 1)) = 62 
     OR [政府信息属性] LIKE '%[=]%' 
     OR [政府信息属性] LIKE '%[{]%' 
     OR [政府信息属性] LIKE '%[}]%' 
@@ -537,8 +537,8 @@ SELECT
 		WHEN [开放审核] LIKE '%[）]%' THEN '中文右括号'
         WHEN [开放审核] LIKE '%[ ]%' THEN '空格'
         WHEN [开放审核] LIKE '%["]%' THEN '双引号'
-        WHEN [开放审核] LIKE '%[<]%' THEN '小于号'
-        WHEN [开放审核] LIKE '%[>]%' THEN '大于号'
+        WHEN UNICODE(SUBSTRING([开放审核], CHARINDEX('<', [开放审核]), 1)) = 60 THEN '半角小于号'
+        WHEN UNICODE(SUBSTRING([开放审核], CHARINDEX('>', [开放审核]), 1)) = 62 THEN '半角大于号'
         WHEN [开放审核] LIKE '%[=]%' THEN '等号'
         WHEN [开放审核] LIKE '%[{]%' THEN '左大括号'
         WHEN [开放审核] LIKE '%[}]%' THEN '右大括号'
@@ -554,8 +554,8 @@ WHERE
 	OR [开放审核] LIKE '%[）]%'
     OR [开放审核] LIKE '%[ ]%' 
     OR [开放审核] LIKE '%["]%' 
-    OR [开放审核] LIKE '%[<]%' 
-    OR [开放审核] LIKE '%[>]%' 
+    OR UNICODE(SUBSTRING([开放审核], CHARINDEX('<', [开放审核]), 1)) = 60
+    OR UNICODE(SUBSTRING([开放审核], CHARINDEX('>', [开放审核]), 1)) = 62
     OR [开放审核] LIKE '%[=]%' 
     OR [开放审核] LIKE '%[{]%' 
     OR [开放审核] LIKE '%[}]%' 
@@ -571,8 +571,8 @@ SELECT
 		WHEN [延期开放理由] LIKE '%[）]%' THEN '中文右括号'
         WHEN [延期开放理由] LIKE '%[ ]%' THEN '空格'
         WHEN [延期开放理由] LIKE '%["]%' THEN '双引号'
-        WHEN [延期开放理由] LIKE '%[<]%' THEN '小于号'
-        WHEN [延期开放理由] LIKE '%[>]%' THEN '大于号'
+        WHEN UNICODE(SUBSTRING([延期开放理由], CHARINDEX('<', [延期开放理由]), 1)) = 60 THEN '半角小于号'
+        WHEN UNICODE(SUBSTRING([延期开放理由], CHARINDEX('>', [延期开放理由]), 1)) = 62 THEN '半角大于号'
         WHEN [延期开放理由] LIKE '%[=]%' THEN '等号'
         WHEN [延期开放理由] LIKE '%[{]%' THEN '左大括号'
         WHEN [延期开放理由] LIKE '%[}]%' THEN '右大括号'
@@ -588,8 +588,8 @@ WHERE
 	OR [延期开放理由] LIKE '%[）]%'
     OR [延期开放理由] LIKE '%[ ]%' 
     OR [延期开放理由] LIKE '%["]%' 
-    OR [延期开放理由] LIKE '%[<]%' 
-    OR [延期开放理由] LIKE '%[>]%' 
+    OR UNICODE(SUBSTRING([延期开放理由], CHARINDEX('<', [延期开放理由]), 1)) = 60
+    OR UNICODE(SUBSTRING([延期开放理由], CHARINDEX('>', [延期开放理由]), 1)) = 62 
     OR [延期开放理由] LIKE '%[=]%' 
     OR [延期开放理由] LIKE '%[{]%' 
     OR [延期开放理由] LIKE '%[}]%' 
